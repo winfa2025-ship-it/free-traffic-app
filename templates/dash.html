@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Traffic Control Center</title>
+<style>
+  :root{color-scheme:light dark}
+  body{font-family:system-ui,sans-serif;max-width:880px;margin:30px auto;padding:0 20px;color:#222;line-height:1.5}
+  h1{font-size:1.5rem}
+  label{display:block;margin:8px 0 4px;font-weight:600}
+  input,textarea,button{width:100%;padding:10px;box-sizing:border-box;font-size:1rem;border:1px solid #ccc;border-radius:8px}
+  textarea{min-height:80px}
+  button{background:#2563eb;color:#fff;border:none;cursor:pointer;margin-top:8px}
+  .card{border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin:18px 0}
+  .ok{color:#16a34a}.err{color:#dc2626}.muted{color:#6b7280;font-size:.9rem}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .row>div{flex:1;min-width:240px}
+  a{color:#2563eb}
+</style>
+</head>
+<body>
+<h1>🌐 Free Traffic Control Center</h1>
+<p class="muted">White-hat organic traffic: manage SEO, auto sitemap/robots, track Search Console. No bots, no spam. <a href="/logout">Logout</a></p>
+
+<div class="card">
+  <label>Admin key</label>
+  <input id="key" type="password" placeholder="if ADMIN_KEY set" />
+  <label>Language</label>
+  <input id="lang" value="en" />
+  <button onclick="loadSite()">Load page settings</button>
+</div>
+
+<div class="card" id="editor" style="display:none">
+  <h3>Page SEO &amp; content</h3>
+  <div class="row">
+    <div><label>Title (30–60)</label><input id="title"/></div>
+    <div><label>Hero title</label><input id="hero_title"/></div>
+  </div>
+  <label>Description (70–160)</label><textarea id="description"></textarea>
+  <label>Keywords (comma)</label><input id="keywords"/>
+  <label>Hero lead</label><textarea id="hero_lead"></textarea>
+  <label>CTA label</label><input id="cta_label"/>
+  <label>CTA URL</label><input id="cta_url"/>
+  <label>Sections (one per line: Heading || body)</label><textarea id="sections"></textarea>
+  <button onclick="saveSite()">💾 Save</button>
+  <p id="save-msg"></p>
+</div>
+
+<div class="card">
+  <h3>SEO health</h3>
+  <button onclick="seoCheck()">Run check</button>
+  <p id="seo"></p>
+</div>
+
+<div class="card">
+  <h3>Search Console (real organic traffic)</h3>
+  <p class="muted">Add credentials.json (Search Console API OAuth) to read top queries. See README.</p>
+  <button onclick="sc()">Load top queries (28d)</button>
+  <div id="sc"></div>
+</div>
+
+<div class="card">
+  <h3>Live files</h3>
+  <p><a href="/sitemap.xml" target="_blank">/sitemap.xml</a> · <a href="/robots.txt" target="_blank">/robots.txt</a> · <a href="/" target="_blank">/ (landing)</a></p>
+  <button onclick="submitSe()">🚀 Submit sitemap to Google &amp; Bing</button>
+  <p id="subse"></p>
+  <p class="muted">Ping asks engines to re-crawl. For guaranteed indexing, also add the site in Google Search Console &amp; Bing Webmaster Tools.</p>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const hd=()=>($('key').value?{headers:{'x-admin-key':$('key').value}}:{});
+async function loadSite(){
+  const r=await fetch('/api/site',hd()); if(!r.ok){alert('unauthorized');return;}
+  const s=await r.json(); const p=s.pages[$('lang').value]||{};
+  ['title','hero_title','description','keywords','hero_lead','cta_label','cta_url'].forEach(k=>$(k).value=p[k]||'');
+  $('sections').value=(p.sections||[]).map(x=>x.h2+' || '+x.body).join('\n');
+  $('editor').style.display='block';
+}
+async function saveSite(){
+  const r=await fetch('/api/site',hd()); const s=await r.json();
+  const lang=$('lang').value;
+  s.pages[lang]={
+    lang, title:$('title').value, hero_title:$('hero_title').value, description:$('description').value,
+    keywords:$('keywords').value, hero_lead:$('hero_lead').value, cta_label:$('cta_label').value, cta_url:$('cta_url').value,
+    sections:$('sections').value.split('\n').filter(Boolean).map(l=>{const i=l.indexOf('||');return {h2:l.slice(0,i).trim(),body:l.slice(i+2).trim()};})
+  };
+  const rr=await fetch('/api/site',{method:'POST',headers:Object.assign({'Content-Type':'application/json'},$('key').value?{'x-admin-key':$('key').value}:{}),body:JSON.stringify(s)});
+  const d=await rr.json(); $('save-msg').className=d.ok?'ok':'err'; $('save-msg').textContent=d.ok?'Saved. Refresh / to see changes.':(d.error||'failed');
+}
+async function seoCheck(){
+  const r=await fetch('/api/seo-check?lang='+$('lang').value,hd()); const d=await r.json();
+  $('seo').innerHTML=`Score: <b>${d.score}</b><br>`+(d.tips.length?d.tips.map(t=>'• '+t).join('<br>'):'✅ Looks good');
+}
+async function sc(){
+  const r=await fetch('/api/searchconsole',hd()); const d=await r.json();
+  $('sc').innerHTML=d.queries?.length?d.queries.map(q=>`${q.query} — ${q.clicks} clicks / ${q.impressions} impr`).join('<br>'):(d.setup||d.error||'no data');
+}
+async function submitSe(){
+  const r=await fetch('/api/submit',{method:'POST',headers:$('key').value?{'x-admin-key':$('key').value}:{}}); const d=await r.json();
+  $('subse').textContent=JSON.stringify(d.results)+' — '+d.note;
+}
+</script>
+</body>
+</html>

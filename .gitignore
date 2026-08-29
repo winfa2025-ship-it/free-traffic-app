@@ -1,0 +1,7 @@
+.env
+data/admin.json
+credentials.json
+__pycache__/
+*.pyc
+data/app.db
+*.log

@@ -1,0 +1,44 @@
+{
+  "domain": "https://your-domain.com",
+  "default_lang": "en",
+  "pages": {
+    "en": {
+      "lang": "en",
+      "title": "Pure Aroma Milk Tea — Global Limited Pre-order | Kungfu Express",
+      "description": "Four Japanese-style aseptic premium milk teas. Global limited pre-order live on Kickstarter Aug 29, 2026. Join top collectors & connoisseurs worldwide and unlock founder-level rewards.",
+      "keywords": "milk tea, bubble tea, premium milk tea, aseptic milk tea, Kungfu Express, Pure Aroma, kickstarter milk tea, limited edition milk tea, Japanese matcha milk tea, strawberry milk tea, raisin milk tea, green apple milk tea",
+      "hero_title": "Pure Aroma Milk Tea — Global Limited Pre-order",
+      "hero_lead": "The crowdfunding project for four new aseptic Pure Aroma Milk Teas officially launched on Kickstarter on August 29, 2026, inviting top collectors and connoisseurs worldwide to participate.",
+      "cta_label": "Pre-order on Kickstarter",
+      "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
+      "sections": [
+        {"h2": "🌟 Four Japanese-Style Artistic Flavors", "body": "Ultimate luxury: unlocking an unprecedented premium taste, four carefully selected flavors are perfectly presented for those who pursue a high quality of life."},
+        {"h2": "Xiangyin Raisin Milk Tea", "body": "Carefully selected noble fruit aromas intertwine to create a sweet and delicate luxurious taste."},
+        {"h2": "Strawberry Milk Tea", "body": "The rich fruit aroma and smooth milky fragrance are perfectly blended, bringing a sweet taste like love."},
+        {"h2": "Green Apple Milk Tea", "body": "The refreshing and crisp fruity acidity balances the richness of the milk tea, creating distinct layers of flavor."},
+        {"h2": "Classic Matcha Milk Tea", "body": "Authentic Japanese tea flavor, with a sweet aftertaste, showcasing the refined craftsmanship of a seasoned artisan."},
+        {"h2": "💎 Why Become a Sponsor?", "body": "Original technology support: we possess independent core technologies and a robust operational structure, dedicated to a revolutionary top-tier tea beverage experience. Limited-edition exclusive rewards: early adopters unlock a globally limited-edition collection plus founder-level benefits and profit sharing. Reject mediocrity, lead the future: participate in a business game that revolutionizes the traditional food and beverage market."},
+        {"h2": "🚀 Act Now, Book Now", "body": "Limited slots available. Every bit of your support drives the project toward full-scale production and global expansion. Pre-order now on Kickstarter."}
+      ]
+    },
+    "zh": {
+      "lang": "zh",
+      "title": "純香奶茶 — 全球限量預售 | 功夫快線",
+      "description": "四款日式無菌高端奶茶，全球限量預售已於 2026 年 8 月 29 日在 Kickstarter 上線。誠邀全球鑑賞家參與，解鎖創辦人級獎勵。",
+      "keywords": "奶茶, 高端奶茶, 無菌奶茶, 功夫快線, 純香奶茶, kickstarter 奶茶, 限量奶茶, 日式抹茶奶茶, 草莓奶茶, 提子奶茶, 青蘋果奶茶",
+      "hero_title": "純香奶茶 — 全球限量預售",
+      "hero_lead": "四款全新無菌純香奶茶眾籌項目已於 2026 年 8 月 29 日在 Kickstarter 正式上線，誠邀全球頂級鑑賞家參與。",
+      "cta_label": "前往 Kickstarter 預購",
+      "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
+      "sections": [
+        {"h2": "🌟 四款日式藝術風味", "body": "頂級奢華：四款精心挑選的口味完美呈現，獻給追求高品質生活的人士。"},
+        {"h2": "香印提子奶茶", "body": "精選高貴果香交織，帶出甜美細緻的奢華口感。"},
+        {"h2": "草莓奶茶", "body": "濃郁果香與順滑奶香完美融合，帶來如戀愛般甜美的味道。"},
+        {"h2": "青蘋果奶茶", "body": "清脆果酸平衡奶茶的濃郁，層次分明。"},
+        {"h2": "經典抹茶奶茶", "body": "正宗日式茶香，回甘甜美，展現匠人級工藝。"},
+        {"h2": "💎 為何成為支持者？", "body": "原創技術：擁有獨立核心技術與穩健營運架構，致力革命性頂級茶飲體驗。限量獎勵：早期支持者解鎖全球限量收藏及創辦人級權益與分紅。拒絕平庸，引領未來：參與重塑餐飲市場的生意。"},
+        {"h2": "🚀 立即行動，立即預訂", "body": "名額有限。您的每一分支持都推動項目邁向量產與全球擴展。立即前往 Kickstarter 預購。"}
+      ]
+    }
+  }
+}
