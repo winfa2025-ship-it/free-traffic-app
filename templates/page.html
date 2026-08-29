@@ -8,7 +8,7 @@
 <meta name="keywords" content="{{ p.keywords }}" />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="{{ site.domain }}/{{ lang }}" />
-{{ alts }}
+  {{ alts|safe }}
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ p.title }}" />
 <meta property="og:description" content="{{ p.description }}" />
@@ -36,7 +36,7 @@ header{padding:14px 0;display:flex;justify-content:space-between;align-items:cen
 .langs{text-align:center;margin-top:12px;font-size:.95rem}
 .langs a{display:inline-block;padding:6px 10px;min-height:40px}
 section{padding:32px 0;border-top:1px solid #2a2114}
-h2{color:var(--gold);font-size:clamp(1.3rem,4vw,1.7rem);line-height:1.25}
+ h2{color:var(--gold);font-size:clamp(1.3rem,4vw,1.7rem);line-height:1.25;border-right:4px solid var(--accent);padding-right:12px;display:inline-block}
 footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-top:1px solid #2a2114}
 @media (max-width:640px){
   .wrap{padding:0 16px}
@@ -61,7 +61,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
     </div>
   </div>
   {% for s in p.sections %}
-  <section><h2>{{ s.h2 }}</h2><p>{{ s.body }}</p></section>
+   <section><h2>{{ s.h2|noemoji }}</h2><p>{{ s.body }}</p></section>
   {% endfor %}
 </div>
 <footer class="wrap">© 2026 Kungfu Express. Global limited pre-order.</footer>

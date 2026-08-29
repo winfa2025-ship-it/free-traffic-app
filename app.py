@@ -1,9 +1,14 @@
-import os, json, datetime, hashlib, secrets, hmac, base64, sqlite3, urllib.request, urllib.parse
+import os, json, datetime, hashlib, secrets, hmac, base64, sqlite3, urllib.request, urllib.parse, re
 from flask import Flask, request, Response, render_template_string, redirect
 from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
+
+_EMOJI_RE = re.compile(r'[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u2190-\u21FF\u2300-\u23FF]')
+@app.template_filter('noemoji')
+def noemoji(s):
+    return _EMOJI_RE.sub('', str(s)).strip()
 DATA = os.path.join(os.path.dirname(__file__), 'data')
 SITE_FILE = os.path.join(DATA, 'site.json')
 ADMINS_FILE = os.path.join(DATA, 'admin.json')
