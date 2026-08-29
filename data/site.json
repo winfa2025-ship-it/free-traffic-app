@@ -4,7 +4,7 @@
   "pages": {
     "en": {
       "lang": "en",
-      "title": "Pure Aroma Milk Tea — Global Limited Pre-order | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Global Limited Pre-order",
       "description": "Four Japanese-style aseptic premium milk teas. Global limited pre-order live on Kickstarter Aug 29, 2026. Join top collectors & connoisseurs worldwide and unlock founder-level rewards.",
       "keywords": "milk tea, bubble tea, premium milk tea, aseptic milk tea, Kungfu Express, Pure Aroma, kickstarter milk tea, limited edition milk tea, Japanese matcha milk tea, strawberry milk tea, raisin milk tea, green apple milk tea",
       "hero_title": "Pure Aroma Milk Tea — Global Limited Pre-order",
@@ -12,18 +12,39 @@
       "cta_label": "Pre-order on Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Four Japanese-Style Artistic Flavors", "body": "Ultimate luxury: unlocking an unprecedented premium taste, four carefully selected flavors are perfectly presented for those who pursue a high quality of life."},
-        {"h2": "Xiangyin Raisin Milk Tea", "body": "Carefully selected noble fruit aromas intertwine to create a sweet and delicate luxurious taste."},
-        {"h2": "Strawberry Milk Tea", "body": "The rich fruit aroma and smooth milky fragrance are perfectly blended, bringing a sweet taste like love."},
-        {"h2": "Green Apple Milk Tea", "body": "The refreshing and crisp fruity acidity balances the richness of the milk tea, creating distinct layers of flavor."},
-        {"h2": "Classic Matcha Milk Tea", "body": "Authentic Japanese tea flavor, with a sweet aftertaste, showcasing the refined craftsmanship of a seasoned artisan."},
-        {"h2": "💎 Why Become a Sponsor?", "body": "Original technology support: we possess independent core technologies and a robust operational structure, dedicated to a revolutionary top-tier tea beverage experience. Limited-edition exclusive rewards: early adopters unlock a globally limited-edition collection plus founder-level benefits and profit sharing. Reject mediocrity, lead the future: participate in a business game that revolutionizes the traditional food and beverage market."},
-        {"h2": "🚀 Act Now, Book Now", "body": "Limited slots available. Every bit of your support drives the project toward full-scale production and global expansion. Pre-order now on Kickstarter."}
+        {
+          "h2": "🌟 Four Japanese-Style Artistic Flavors",
+          "body": "Ultimate luxury: unlocking an unprecedented premium taste, four carefully selected flavors are perfectly presented for those who pursue a high quality of life."
+        },
+        {
+          "h2": "Xiangyin Raisin Milk Tea",
+          "body": "Carefully selected noble fruit aromas intertwine to create a sweet and delicate luxurious taste."
+        },
+        {
+          "h2": "Strawberry Milk Tea",
+          "body": "The rich fruit aroma and smooth milky fragrance are perfectly blended, bringing a sweet taste like love."
+        },
+        {
+          "h2": "Green Apple Milk Tea",
+          "body": "The refreshing and crisp fruity acidity balances the richness of the milk tea, creating distinct layers of flavor."
+        },
+        {
+          "h2": "Classic Matcha Milk Tea",
+          "body": "Authentic Japanese tea flavor, with a sweet aftertaste, showcasing the refined craftsmanship of a seasoned artisan."
+        },
+        {
+          "h2": "💎 Why Become a Sponsor?",
+          "body": "Original technology support: we possess independent core technologies and a robust operational structure, dedicated to a revolutionary top-tier tea beverage experience. Limited-edition exclusive rewards: early adopters unlock a globally limited-edition collection plus founder-level benefits and profit sharing. Reject mediocrity, lead the future: participate in a business game that revolutionizes the traditional food and beverage market."
+        },
+        {
+          "h2": "🚀 Act Now, Book Now",
+          "body": "Limited slots available. Every bit of your support drives the project toward full-scale production and global expansion. Pre-order now on Kickstarter."
+        }
       ]
     },
     "zh": {
       "lang": "zh",
-      "title": "純香奶茶 — 全球限量預售 | 功夫快線",
+      "title": "Pure Aroma 純香奶茶 — 全球限量預售 | 功夫快線",
       "description": "四款日式無菌高端奶茶，全球限量預售已於 2026 年 8 月 29 日在 Kickstarter 上線。誠邀全球鑑賞家參與，解鎖創辦人級獎勵。",
       "keywords": "奶茶, 高端奶茶, 無菌奶茶, 功夫快線, 純香奶茶, kickstarter 奶茶, 限量奶茶, 日式抹茶奶茶, 草莓奶茶, 提子奶茶, 青蘋果奶茶",
       "hero_title": "純香奶茶 — 全球限量預售",
@@ -31,18 +52,39 @@
       "cta_label": "前往 Kickstarter 預購",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 四款日式藝術風味", "body": "頂級奢華：四款精心挑選的口味完美呈現，獻給追求高品質生活的人士。"},
-        {"h2": "香印提子奶茶", "body": "精選高貴果香交織，帶出甜美細緻的奢華口感。"},
-        {"h2": "草莓奶茶", "body": "濃郁果香與順滑奶香完美融合，帶來如戀愛般甜美的味道。"},
-        {"h2": "青蘋果奶茶", "body": "清脆果酸平衡奶茶的濃郁，層次分明。"},
-        {"h2": "經典抹茶奶茶", "body": "正宗日式茶香，回甘甜美，展現匠人級工藝。"},
-        {"h2": "💎 為何成為支持者？", "body": "原創技術：擁有獨立核心技術與穩健營運架構，致力革命性頂級茶飲體驗。限量獎勵：早期支持者解鎖全球限量收藏及創辦人級權益與分紅。拒絕平庸，引領未來：參與重塑餐飲市場的生意。"},
-        {"h2": "🚀 立即行動，立即預訂", "body": "名額有限。您的每一分支持都推動項目邁向量產與全球擴展。立即前往 Kickstarter 預購。"}
+        {
+          "h2": "🌟 四款日式藝術風味",
+          "body": "頂級奢華：四款精心挑選的口味完美呈現，獻給追求高品質生活的人士。"
+        },
+        {
+          "h2": "香印提子奶茶",
+          "body": "精選高貴果香交織，帶出甜美細緻的奢華口感。"
+        },
+        {
+          "h2": "草莓奶茶",
+          "body": "濃郁果香與順滑奶香完美融合，帶來如戀愛般甜美的味道。"
+        },
+        {
+          "h2": "青蘋果奶茶",
+          "body": "清脆果酸平衡奶茶的濃郁，層次分明。"
+        },
+        {
+          "h2": "經典抹茶奶茶",
+          "body": "正宗日式茶香，回甘甜美，展現匠人級工藝。"
+        },
+        {
+          "h2": "💎 為何成為支持者？",
+          "body": "原創技術：擁有獨立核心技術與穩健營運架構，致力革命性頂級茶飲體驗。限量獎勵：早期支持者解鎖全球限量收藏及創辦人級權益與分紅。拒絕平庸，引領未來：參與重塑餐飲市場的生意。"
+        },
+        {
+          "h2": "🚀 立即行動，立即預訂",
+          "body": "名額有限。您的每一分支持都推動項目邁向量產與全球擴展。立即前往 Kickstarter 預購。"
+        }
       ]
     },
     "ja": {
       "lang": "ja",
-      "title": "ピュアアロマミルクティー — 世界限定予約販売 | Kungfu Express",
+      "title": "Pure Aroma ミルクティー — 世界限定予約 | Kungfu",
       "description": "4種の日本スタイル無菌ミルクティー。2026年8月29日よりKickstarterで世界限定予約販売開始。コレクターや愛好家の皆様へ。",
       "keywords": "ミルクティー, バブルティー, プレミアムミルクティー, 無菌ミルクティー, Kungfu Express, ピュアアロマ, 抹茶ミルクティー, 限定ミルクティー",
       "hero_title": "ピュアアロマミルクティー — 世界限定予約販売",
@@ -50,18 +92,39 @@
       "cta_label": "Kickstarterで予約する",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 4種の日本スタイル芸術的フレーバー", "body": "最高級の味わい：厳選された4つのフレーバーを、高品質を求める方々へ。"},
-        {"h2": "香印レーズンミルクティー", "body": "上品な果実の香りが織りなす、甘く繊細なラグジュアリーな味わい。"},
-        {"h2": "ストロベリーミルクティー", "body": "濃厚な果実香とまろやかなミルク香が融合し、恋のような甘さに。"},
-        {"h2": "グリーンアップルミルクティー", "body": "爽やかな果酸がミルクティーのコクを整え、層のある味わいに。"},
-        {"h2": "クラシック抹茶ミルクティー", "body": "本格的な日本茶の風味、甘い余韻、職人の技。"},
-        {"h2": "💎 なぜサポーターになるのか", "body": "独自技術：堅実な運営と独自コア技術で、革新的な最高級ティー体験を。限定特典：早期支援者は世界限定コレクションと創設者特典・配当を獲得。平凡を拒み、未来を導く。"},
-        {"h2": "🚀 今すぐ行動", "body": "枠限定。ご支援の一つひとつが量産と世界展開を推進します。今すぐKickstarterで予約を。"}
+        {
+          "h2": "🌟 4種の日本スタイル芸術的フレーバー",
+          "body": "最高級の味わい：厳選された4つのフレーバーを、高品質を求める方々へ。"
+        },
+        {
+          "h2": "香印レーズンミルクティー",
+          "body": "上品な果実の香りが織りなす、甘く繊細なラグジュアリーな味わい。"
+        },
+        {
+          "h2": "ストロベリーミルクティー",
+          "body": "濃厚な果実香とまろやかなミルク香が融合し、恋のような甘さに。"
+        },
+        {
+          "h2": "グリーンアップルミルクティー",
+          "body": "爽やかな果酸がミルクティーのコクを整え、層のある味わいに。"
+        },
+        {
+          "h2": "クラシック抹茶ミルクティー",
+          "body": "本格的な日本茶の風味、甘い余韻、職人の技。"
+        },
+        {
+          "h2": "💎 なぜサポーターになるのか",
+          "body": "独自技術：堅実な運営と独自コア技術で、革新的な最高級ティー体験を。限定特典：早期支援者は世界限定コレクションと創設者特典・配当を獲得。平凡を拒み、未来を導く。"
+        },
+        {
+          "h2": "🚀 今すぐ行動",
+          "body": "枠限定。ご支援の一つひとつが量産と世界展開を推進します。今すぐKickstarterで予約を。"
+        }
       ]
     },
     "ko": {
       "lang": "ko",
-      "title": "퓨어 아로마 밀크티 — 전 세계 한정 예약 판매 | Kungfu Express",
+      "title": "Pure Aroma 밀크티 — 글로벌 한정 예약 | Kungfu",
       "description": "4가지 일본풍 무균 밀크티. 2026년 8월 29일 Kickstarter에서 전 세계 한정 예약 판매 시작. 컬렉터와 애호가 여러분을 초대합니다.",
       "keywords": "밀크티, 버블티, 프리미엄 밀크티, 무균 밀크티, Kungfu Express, 퓨어 아로마, 말차 밀크티, 한정 밀크티",
       "hero_title": "퓨어 아로마 밀크티 — 전 세계 한정 예약 판매",
@@ -69,18 +132,39 @@
       "cta_label": "Kickstarter에서 예약",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 4가지 일본풍 예술 풍미", "body": "최고급 맛: 엄선된 4가지 풍미를 고품질을 추구하는 분께."},
-        {"h2": "샹인 건포도 밀크티", "body": "고귀한 과일 향이 어우러진 달콤하고 섬세한 럭셔리 풍미."},
-        {"h2": "딸기 밀크티", "body": "진한 과일 향과 부드러운 우유 향이 사랑스러운 단맛으로 어우러집니다."},
-        {"h2": "그린 애플 밀크티", "body": "상큼한 과일 산미가 밀크티의 진함을 균형 있게 잡아 줍니다."},
-        {"h2": "클래식 말차 밀크티", "body": "정통 일본 차 풍미, 단 뒷맛, 장인의 기술."},
-        {"h2": "💎 왜 서포터가 되나요?", "body": "독자 기술: 견실한 운영과 독자 핵심 기술로 혁신적인 최고급 차 경험을. 한정 특전: 얼리 버드는 전 세계 한정 컬렉션과 창업자 특전·배당을 획득. 평범을 거부하고 미래를 선도하세요."},
-        {"h2": "🚀 지금 행동하세요", "body": "수량 한정. 여러분의 지원이 양산과 글로벌 확장을 이끕니다. 지금 Kickstarter에서 예약하세요."}
+        {
+          "h2": "🌟 4가지 일본풍 예술 풍미",
+          "body": "최고급 맛: 엄선된 4가지 풍미를 고품질을 추구하는 분께."
+        },
+        {
+          "h2": "샹인 건포도 밀크티",
+          "body": "고귀한 과일 향이 어우러진 달콤하고 섬세한 럭셔리 풍미."
+        },
+        {
+          "h2": "딸기 밀크티",
+          "body": "진한 과일 향과 부드러운 우유 향이 사랑스러운 단맛으로 어우러집니다."
+        },
+        {
+          "h2": "그린 애플 밀크티",
+          "body": "상큼한 과일 산미가 밀크티의 진함을 균형 있게 잡아 줍니다."
+        },
+        {
+          "h2": "클래식 말차 밀크티",
+          "body": "정통 일본 차 풍미, 단 뒷맛, 장인의 기술."
+        },
+        {
+          "h2": "💎 왜 서포터가 되나요?",
+          "body": "독자 기술: 견실한 운영과 독자 핵심 기술로 혁신적인 최고급 차 경험을. 한정 특전: 얼리 버드는 전 세계 한정 컬렉션과 창업자 특전·배당을 획득. 평범을 거부하고 미래를 선도하세요."
+        },
+        {
+          "h2": "🚀 지금 행동하세요",
+          "body": "수량 한정. 여러분의 지원이 양산과 글로벌 확장을 이끕니다. 지금 Kickstarter에서 예약하세요."
+        }
       ]
     },
     "es": {
       "lang": "es",
-      "title": "Pure Aroma Milk Tea — Preventa Limitada Global | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Preventa Global Limitada",
       "description": "Cuatro tés con leche japoneses asépticos premium. Preventa limitada global en Kickstarter desde el 29 de agosto de 2026. Invitamos a coleccionistas y conocedores.",
       "keywords": "té con leche, bubble tea, té con leche premium, té con leche aséptico, Kungfu Express, Pure Aroma, té matcha, té con leche limitado",
       "hero_title": "Pure Aroma Milk Tea — Preventa Limitada Global",
@@ -88,18 +172,39 @@
       "cta_label": "Reservar en Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Cuatro Sabores Artísticos Japoneses", "body": "Lujo supremo: cuatro sabores seleccionados para quienes buscan alta calidad."},
-        {"h2": "Té con Leche de Pasa Xiangyin", "body": "Aromas frutales nobles entrelazados en un sabor dulce y delicado."},
-        {"h2": "Té con Leche de Fresa", "body": "Aroma frutal intenso y suave leche se funden en un sabor dulce como el amor."},
-        {"h2": "Té con Leche de Manzana Verde", "body": "Acidez frutal fresca equilibra la riqueza del té con leche."},
-        {"h2": "Té con Leche Matcha Clásico", "body": "Auténtico sabor japonés del té, dulce retrogusto, artesanía de maestro."},
-        {"h2": "💎 ¿Por qué ser patrocinador?", "body": "Tecnología propia: estructura sólida y tecnología central para una experiencia de té premium. Recompensas limitadas: los primeros obtienen colección limitada y beneficios de fundador. Rechaza la mediocridad, lidera el futuro."},
-        {"h2": "🚀 Actúa ya", "body": "Plazas limitadas. Cada apoyo impulsa la producción global. Reserva ahora en Kickstarter."}
+        {
+          "h2": "🌟 Cuatro Sabores Artísticos Japoneses",
+          "body": "Lujo supremo: cuatro sabores seleccionados para quienes buscan alta calidad."
+        },
+        {
+          "h2": "Té con Leche de Pasa Xiangyin",
+          "body": "Aromas frutales nobles entrelazados en un sabor dulce y delicado."
+        },
+        {
+          "h2": "Té con Leche de Fresa",
+          "body": "Aroma frutal intenso y suave leche se funden en un sabor dulce como el amor."
+        },
+        {
+          "h2": "Té con Leche de Manzana Verde",
+          "body": "Acidez frutal fresca equilibra la riqueza del té con leche."
+        },
+        {
+          "h2": "Té con Leche Matcha Clásico",
+          "body": "Auténtico sabor japonés del té, dulce retrogusto, artesanía de maestro."
+        },
+        {
+          "h2": "💎 ¿Por qué ser patrocinador?",
+          "body": "Tecnología propia: estructura sólida y tecnología central para una experiencia de té premium. Recompensas limitadas: los primeros obtienen colección limitada y beneficios de fundador. Rechaza la mediocridad, lidera el futuro."
+        },
+        {
+          "h2": "🚀 Actúa ya",
+          "body": "Plazas limitadas. Cada apoyo impulsa la producción global. Reserva ahora en Kickstarter."
+        }
       ]
     },
     "ar": {
       "lang": "ar",
-      "title": "بيور أروما ميلك تي — طلب مسبق محدود عالميًا | كونغ فو إكسبرس",
+      "title": "Pure Aroma حليب الشاي — طلب محدود عالمي",
       "description": "أربعة أنواع من شاي الحليب الياباني المعقم الفاخر. طلب مسبق محدود عالميًا على كيك ستارتر من 29 أغسطس 2026. ندعو كبار الجامعين وذوّاقة الشاي حول العالم.",
       "keywords": "شاي بالحليب, بابل تي, شاي حليب فاخر, شاي معقم, كونغ فو إكسبرس, بيور أروما, شاي ماتشا, شاي محدود",
       "hero_title": "بيور أروما ميلك تي — طلب مسبق محدود عالميًا",
@@ -107,18 +212,39 @@
       "cta_label": "اطلب مسبقًا على كيك ستارتر",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 أربعة نكهات فنية بأسلوب ياباني", "body": "فخامة فائقة: أربعة نكهات مختارة بعناية لمن يبحث عن أعلى جودة."},
-        {"h2": "شاي حليب زبيب شيانغيين", "body": "تتشابك روائح الفواكه النبيلة لتخلق مذاقًا حلوًا ورقيقًا فاخرًا."},
-        {"h2": "شاي حليب الفراولة", "body": "يتمازج عبير الفواكه الغني مع عطر الحليب الناعم في مذاق حلو كالحب."},
-        {"h2": "شاي حليب التفاح الأخضر", "body": "حموضة الفواكه المنعشة توازن غنى شاي الحليب بطبقات مميزة."},
-        {"h2": "شاي ماتشا الكلاسيكي", "body": "نكهة شاي ياباني أصيل، بمذاق حلو لاحق، وحرفة صانع ماهر."},
-        {"h2": "💎 لماذا تصبح راعيًا؟", "body": "تقنية أصلية: بنية تشغيلية متينة وتقنية أساسية مستقلة لتجربة شاي فاخرة ثورية. مكافآت حصرية محدودة: يحصل السباقون على مجموعة محدودة عالميًا مع مزايا المؤسس وحصص الأرباح. ارفض الرتابة وقيادة المستقبل."},
-        {"h2": "🚀 تصرف الآن", "body": "المقاعد محدودة. كل دعم منك يدفع المشروع نحو الإنتاج الكامل والتوسع العالمي. اطلب الآن على كيك ستارتر."}
+        {
+          "h2": "🌟 أربعة نكهات فنية بأسلوب ياباني",
+          "body": "فخامة فائقة: أربعة نكهات مختارة بعناية لمن يبحث عن أعلى جودة."
+        },
+        {
+          "h2": "شاي حليب زبيب شيانغيين",
+          "body": "تتشابك روائح الفواكه النبيلة لتخلق مذاقًا حلوًا ورقيقًا فاخرًا."
+        },
+        {
+          "h2": "شاي حليب الفراولة",
+          "body": "يتمازج عبير الفواكه الغني مع عطر الحليب الناعم في مذاق حلو كالحب."
+        },
+        {
+          "h2": "شاي حليب التفاح الأخضر",
+          "body": "حموضة الفواكه المنعشة توازن غنى شاي الحليب بطبقات مميزة."
+        },
+        {
+          "h2": "شاي ماتشا الكلاسيكي",
+          "body": "نكهة شاي ياباني أصيل، بمذاق حلو لاحق، وحرفة صانع ماهر."
+        },
+        {
+          "h2": "💎 لماذا تصبح راعيًا؟",
+          "body": "تقنية أصلية: بنية تشغيلية متينة وتقنية أساسية مستقلة لتجربة شاي فاخرة ثورية. مكافآت حصرية محدودة: يحصل السباقون على مجموعة محدودة عالميًا مع مزايا المؤسس وحصص الأرباح. ارفض الرتابة وقيادة المستقبل."
+        },
+        {
+          "h2": "🚀 تصرف الآن",
+          "body": "المقاعد محدودة. كل دعم منك يدفع المشروع نحو الإنتاج الكامل والتوسع العالمي. اطلب الآن على كيك ستارتر."
+        }
       ]
     },
     "ru": {
       "lang": "ru",
-      "title": "Pure Aroma Milk Tea — Глобальный ограниченный предзаказ | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Глобальный предзаказ",
       "description": "Четыре японских стерильных премиальных молочных чая. Глобальный ограниченный предзаказ на Kickstarter с 29 августа 2026. Приглашаем коллекционеров и ценителей по всему миру.",
       "keywords": "молочный чай, бабл ти, премиальный молочный чай, стерильный молочный чай, Kungfu Express, Pure Aroma, матча молочный чай, ограниченный молочный чай",
       "hero_title": "Pure Aroma Milk Tea — Глобальный ограниченный предзаказ",
@@ -126,18 +252,39 @@
       "cta_label": "Заказать на Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Четыре японских художественных вкуса", "body": "Высший премиум: четыре тщательно отобранных вкуса для тех, кто ценит высокое качество."},
-        {"h2": "Изюмный молочный чай Xiangyin", "body": "Благородные фруктовые ароматы сплетаются в нежный и изысканный вкус."},
-        {"h2": "Клубничный молочный чай", "body": "Насыщенный фруктовый аромат и мягкое молоко сливаются в сладкий вкус, как любовь."},
-        {"h2": "Молочный чай Green Apple", "body": "Свежая фруктовая кислинка уравновешивает насыщенность чая слоями вкуса."},
-        {"h2": "Классический матча молочный чай", "body": "Аутентичный японский вкус чая, сладкое послевкусие, мастерство мастера."},
-        {"h2": "💎 Почему стать спонсором?", "body": "Собственные технологии: прочная структура и ключевые технологии для революционного премиального чайного опыта. Эксклюзивные награды: первые получают глобально ограниченную коллекцию и привилегии основателя с долей прибыли. Отвергни посредственность, веди будущее."},
-        {"h2": "🚀 Действуй сейчас", "body": "Места ограничены. Каждая поддержка продвигает проект к массовому производству и глобальному масштабированию. Закажи сейчас на Kickstarter."}
+        {
+          "h2": "🌟 Четыре японских художественных вкуса",
+          "body": "Высший премиум: четыре тщательно отобранных вкуса для тех, кто ценит высокое качество."
+        },
+        {
+          "h2": "Изюмный молочный чай Xiangyin",
+          "body": "Благородные фруктовые ароматы сплетаются в нежный и изысканный вкус."
+        },
+        {
+          "h2": "Клубничный молочный чай",
+          "body": "Насыщенный фруктовый аромат и мягкое молоко сливаются в сладкий вкус, как любовь."
+        },
+        {
+          "h2": "Молочный чай Green Apple",
+          "body": "Свежая фруктовая кислинка уравновешивает насыщенность чая слоями вкуса."
+        },
+        {
+          "h2": "Классический матча молочный чай",
+          "body": "Аутентичный японский вкус чая, сладкое послевкусие, мастерство мастера."
+        },
+        {
+          "h2": "💎 Почему стать спонсором?",
+          "body": "Собственные технологии: прочная структура и ключевые технологии для революционного премиального чайного опыта. Эксклюзивные награды: первые получают глобально ограниченную коллекцию и привилегии основателя с долей прибыли. Отвергни посредственность, веди будущее."
+        },
+        {
+          "h2": "🚀 Действуй сейчас",
+          "body": "Места ограничены. Каждая поддержка продвигает проект к массовому производству и глобальному масштабированию. Закажи сейчас на Kickstarter."
+        }
       ]
     },
     "de": {
       "lang": "de",
-      "title": "Pure Aroma Milk Tea — Globale limitierte Vorbestellung | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Globale limitierte Vorbestellung",
       "description": "Vier japanische sterile Premium-Milchtees. Globale limitierte Vorbestellung auf Kickstarter ab 29. August 2026. Wir laden Sammler und Kenner weltweit ein.",
       "keywords": "Milchtee, Bubble Tea, Premium-Milchtee, steriler Milchtee, Kungfu Express, Pure Aroma, Matcha-Milchtee, limitierter Milchtee",
       "hero_title": "Pure Aroma Milk Tea — Globale limitierte Vorbestellung",
@@ -145,18 +292,39 @@
       "cta_label": "Auf Kickstarter bestellen",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Vier japanische handwerkliche Sorten", "body": "Höchstes Premium: vier sorgfältig ausgewählte Sorten für alle, die Qualität schätzen."},
-        {"h2": "Xiangyin Rosinen-Milchtee", "body": "Edle Fruchtaromen verweben sich zu einem sanften, raffinierten Geschmack."},
-        {"h2": "Erdbeer-Milchtee", "body": "Intensives Fruchtaroma und weiche Milch verschmelzen zu einem süßen Geschmack wie die Liebe."},
-        {"h2": "Green-Apple-Milchtee", "body": "Frische Fruchtsäure balanciert die Fülle des Tees in Geschmacksschichten aus."},
-        {"h2": "Klassischer Matcha-Milchtee", "body": "Authentischer japanischer Teegeschmack, süßer Abgang, Meisterhandwerk."},
-        {"h2": "💎 Warum uns unterstützen?", "body": "Eigene Technologie: robuste Struktur und Schlüsseltechnologien für ein revolutionäres Premium-Tee-Erlebnis. Exklusive Belohnungen: die Ersten erhalten die global limitierte Kollektion und Gründerprivilegien mit Gewinnbeteiligung. Verweigere das Mittelmaß, gestalte die Zukunft."},
-        {"h2": "🚀 Jetzt handeln", "body": "Plätze begrenzt. Jede Unterstützung bringt das Projekt der Serienproduktion und globalen Skalierung näher. Bestelle jetzt auf Kickstarter."}
+        {
+          "h2": "🌟 Vier japanische handwerkliche Sorten",
+          "body": "Höchstes Premium: vier sorgfältig ausgewählte Sorten für alle, die Qualität schätzen."
+        },
+        {
+          "h2": "Xiangyin Rosinen-Milchtee",
+          "body": "Edle Fruchtaromen verweben sich zu einem sanften, raffinierten Geschmack."
+        },
+        {
+          "h2": "Erdbeer-Milchtee",
+          "body": "Intensives Fruchtaroma und weiche Milch verschmelzen zu einem süßen Geschmack wie die Liebe."
+        },
+        {
+          "h2": "Green-Apple-Milchtee",
+          "body": "Frische Fruchtsäure balanciert die Fülle des Tees in Geschmacksschichten aus."
+        },
+        {
+          "h2": "Klassischer Matcha-Milchtee",
+          "body": "Authentischer japanischer Teegeschmack, süßer Abgang, Meisterhandwerk."
+        },
+        {
+          "h2": "💎 Warum uns unterstützen?",
+          "body": "Eigene Technologie: robuste Struktur und Schlüsseltechnologien für ein revolutionäres Premium-Tee-Erlebnis. Exklusive Belohnungen: die Ersten erhalten die global limitierte Kollektion und Gründerprivilegien mit Gewinnbeteiligung. Verweigere das Mittelmaß, gestalte die Zukunft."
+        },
+        {
+          "h2": "🚀 Jetzt handeln",
+          "body": "Plätze begrenzt. Jede Unterstützung bringt das Projekt der Serienproduktion und globalen Skalierung näher. Bestelle jetzt auf Kickstarter."
+        }
       ]
     },
     "fr": {
       "lang": "fr",
-      "title": "Pure Aroma Milk Tea — Précommande mondiale limitée | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Précommande Mondiale Limitée",
       "description": "Quatre thés au lait premium stériles japonais. Précommande mondiale limitée sur Kickstarter dès le 29 août 2026. Nous invitons collectionneurs et connaisseurs du monde entier.",
       "keywords": "thé au lait, bubble tea, thé au lait premium, thé au lait stérile, Kungfu Express, Pure Aroma, thé au lait matcha, thé au lait limité",
       "hero_title": "Pure Aroma Milk Tea — Précommande mondiale limitée",
@@ -164,18 +332,39 @@
       "cta_label": "Commander sur Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Quatre saveurs artisanales japonaises", "body": "Premium absolu : quatre saveurs soigneusement sélectionnées pour ceux qui aiment la qualité."},
-        {"h2": "Thé au lait aux raisins secs Xiangyin", "body": "De nobles arômes fruités s'entrelacent en un goût délicat et raffiné."},
-        {"h2": "Thé au lait à la fraise", "body": "Un arôme fruité intense et un lait doux se mêlent en un goût sucré comme l'amour."},
-        {"h2": "Thé au lait Green Apple", "body": "Une acidité fruitée fraîche équilibre la richesse du thé en couches de saveur."},
-        {"h2": "Thé au lait matcha classique", "body": "Goût de thé japonais authentique, finale sucrée, savoir-faire de maître."},
-        {"h2": "💎 Pourquoi nous soutenir ?", "body": "Technologie maison : structure robuste et technologies clés pour une expérience de thé premium révolutionnaire. Récompenses exclusives : les premiers reçoivent la collection à édition mondiale limitée et les privilèges de fondateur avec part des bénéfices. Rejetez la médiocrité, portez l'avenir."},
-        {"h2": "🚀 Agissez maintenant", "body": "Places limitées. Chaque soutien porte le projet vers la production de masse et l'expansion mondiale. Commandez dès maintenant sur Kickstarter."}
+        {
+          "h2": "🌟 Quatre saveurs artisanales japonaises",
+          "body": "Premium absolu : quatre saveurs soigneusement sélectionnées pour ceux qui aiment la qualité."
+        },
+        {
+          "h2": "Thé au lait aux raisins secs Xiangyin",
+          "body": "De nobles arômes fruités s'entrelacent en un goût délicat et raffiné."
+        },
+        {
+          "h2": "Thé au lait à la fraise",
+          "body": "Un arôme fruité intense et un lait doux se mêlent en un goût sucré comme l'amour."
+        },
+        {
+          "h2": "Thé au lait Green Apple",
+          "body": "Une acidité fruitée fraîche équilibre la richesse du thé en couches de saveur."
+        },
+        {
+          "h2": "Thé au lait matcha classique",
+          "body": "Goût de thé japonais authentique, finale sucrée, savoir-faire de maître."
+        },
+        {
+          "h2": "💎 Pourquoi nous soutenir ?",
+          "body": "Technologie maison : structure robuste et technologies clés pour une expérience de thé premium révolutionnaire. Récompenses exclusives : les premiers reçoivent la collection à édition mondiale limitée et les privilèges de fondateur avec part des bénéfices. Rejetez la médiocrité, portez l'avenir."
+        },
+        {
+          "h2": "🚀 Agissez maintenant",
+          "body": "Places limitées. Chaque soutien porte le projet vers la production de masse et l'expansion mondiale. Commandez dès maintenant sur Kickstarter."
+        }
       ]
     },
     "pt": {
       "lang": "pt",
-      "title": "Pure Aroma Milk Tea — Pré-venda global limitada | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Pré-venda Global Limitada",
       "description": "Quatro chás com leite premium estéreis japoneses. Pré-venda global limitada no Kickstarter a partir de 29 de agosto de 2026. Convidamos colecionadores e conhecedores do mundo todo.",
       "keywords": "chá com leite, bubble tea, chá com leite premium, chá com leite estéril, Kungfu Express, Pure Aroma, chá com leite matcha, chá com leite limitado",
       "hero_title": "Pure Aroma Milk Tea — Pré-venda global limitada",
@@ -183,18 +372,39 @@
       "cta_label": "Pedir no Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Quatro sabores artesanais japoneses", "body": "O mais alto premium: quatro sabores cuidadosamente selecionados para quem valoriza qualidade."},
-        {"h2": "Chá com leite de passas Xiangyin", "body": "Nobres aromas frutados se entrelaçam em um sabor suave e refinado."},
-        {"h2": "Chá com leite de morango", "body": "Aroma frutado intenso e leite macio se fundem em um sabor doce como o amor."},
-        {"h2": "Chá com leite Green Apple", "body": "Uma acidez frutada fresca equilibra a riqueza do chá em camadas de sabor."},
-        {"h2": "Chá com leite matcha clássico", "body": "Sabor autêntico de chá japonês, final doce, maestria artesanal."},
-        {"h2": "💎 Por que apoiar?", "body": "Tecnologia própria: estrutura robusta e tecnologias-chave para uma experiência premium revolucionária de chá. Recompensas exclusivas: os primeiros recebem a coleção de edição global limitada e privilégios de fundador com participação nos lucros. Rejeite a mediocridade, lidere o futuro."},
-        {"h2": "🚀 Aja agora", "body": "Vagas limitadas. Cada apoio leva o projeto à produção em massa e à expansão global. Peça agora no Kickstarter."}
+        {
+          "h2": "🌟 Quatro sabores artesanais japoneses",
+          "body": "O mais alto premium: quatro sabores cuidadosamente selecionados para quem valoriza qualidade."
+        },
+        {
+          "h2": "Chá com leite de passas Xiangyin",
+          "body": "Nobres aromas frutados se entrelaçam em um sabor suave e refinado."
+        },
+        {
+          "h2": "Chá com leite de morango",
+          "body": "Aroma frutado intenso e leite macio se fundem em um sabor doce como o amor."
+        },
+        {
+          "h2": "Chá com leite Green Apple",
+          "body": "Uma acidez frutada fresca equilibra a riqueza do chá em camadas de sabor."
+        },
+        {
+          "h2": "Chá com leite matcha clássico",
+          "body": "Sabor autêntico de chá japonês, final doce, maestria artesanal."
+        },
+        {
+          "h2": "💎 Por que apoiar?",
+          "body": "Tecnologia própria: estrutura robusta e tecnologias-chave para uma experiência premium revolucionária de chá. Recompensas exclusivas: os primeiros recebem a coleção de edição global limitada e privilégios de fundador com participação nos lucros. Rejeite a mediocridade, lidere o futuro."
+        },
+        {
+          "h2": "🚀 Aja agora",
+          "body": "Vagas limitadas. Cada apoio leva o projeto à produção em massa e à expansão global. Peça agora no Kickstarter."
+        }
       ]
     },
     "it": {
       "lang": "it",
-      "title": "Pure Aroma Milk Tea — Preordine globale limitato | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Preordine Globale Limitato",
       "description": "Quattro tè al latte premium sterili giapponesi. Preordine globale limitato su Kickstarter dal 29 agosto 2026. Invitiamo collezionisti ed esperti di tutto il mondo.",
       "keywords": "tè al latte, bubble tea, tè al latte premium, tè al latte sterile, Kungfu Express, Pure Aroma, tè al latte matcha, tè al latte limitato",
       "hero_title": "Pure Aroma Milk Tea — Preordine globale limitato",
@@ -202,18 +412,39 @@
       "cta_label": "Ordina su Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Quattro sapori artigianali giapponesi", "body": "Premium assoluto: quattro sapori selezionati con cura per chi ama la qualità."},
-        {"h2": "Tè al latte all'uvetta Xiangyin", "body": "Nobili aromi fruttati si intrecciano in un gusto delicato e raffinato."},
-        {"h2": "Tè al latte alla fragola", "body": "Aroma fruttato intenso e latte morbido si fondono in un gusto dolce come l'amore."},
-        {"h2": "Tè al latte Green Apple", "body": "Una fresca acidità fruttata equilibra la ricchezza del tè in strati di sapore."},
-        {"h2": "Tè al latte matcha classico", "body": "Sapore autentico di tè giapponese, finale dolce, maestria artigianale."},
-        {"h2": "💎 Perché sostenerci?", "body": "Tecnologia proprietaria: struttura solida e tecnologie chiave per un'esperienza premium rivoluzionaria di tè. Ricompense esclusive: i primi ricevono la collezione a edizione globale limitata e i privilegi di fondatore con quota di profitto. Rifiuta la mediocrità, guida il futuro."},
-        {"h2": "🚀 Agisci ora", "body": "Posti limitati. Ogni sostegno porta il progetto verso la produzione di massa e l'espansione globale. Ordina ora su Kickstarter."}
+        {
+          "h2": "🌟 Quattro sapori artigianali giapponesi",
+          "body": "Premium assoluto: quattro sapori selezionati con cura per chi ama la qualità."
+        },
+        {
+          "h2": "Tè al latte all'uvetta Xiangyin",
+          "body": "Nobili aromi fruttati si intrecciano in un gusto delicato e raffinato."
+        },
+        {
+          "h2": "Tè al latte alla fragola",
+          "body": "Aroma fruttato intenso e latte morbido si fondono in un gusto dolce come l'amore."
+        },
+        {
+          "h2": "Tè al latte Green Apple",
+          "body": "Una fresca acidità fruttata equilibra la ricchezza del tè in strati di sapore."
+        },
+        {
+          "h2": "Tè al latte matcha classico",
+          "body": "Sapore autentico di tè giapponese, finale dolce, maestria artigianale."
+        },
+        {
+          "h2": "💎 Perché sostenerci?",
+          "body": "Tecnologia proprietaria: struttura solida e tecnologie chiave per un'esperienza premium rivoluzionaria di tè. Ricompense esclusive: i primi ricevono la collezione a edizione globale limitata e i privilegi di fondatore con quota di profitto. Rifiuta la mediocrità, guida il futuro."
+        },
+        {
+          "h2": "🚀 Agisci ora",
+          "body": "Posti limitati. Ogni sostegno porta il progetto verso la produzione di massa e l'espansione globale. Ordina ora su Kickstarter."
+        }
       ]
     },
     "hi": {
       "lang": "hi",
-      "title": "Pure Aroma Milk Tea — वैश्विक सीमित प्री-ऑर्डर | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — वैश्विक सीमित प्री-ऑर्डर",
       "description": "चार जापानी स्टराइल प्रीमियम मिल्क टी। 29 अगस्त 2026 से Kickstarter पर वैश्विक सीमित प्री-ऑर्डर। हम दुनिया भर के संग्रहकर्ताओं और जानकारों को आमंत्रित करते हैं।",
       "keywords": "मिल्क टी, बबल टी, प्रीमियम मिल्क टी, स्टराइल मिल्क टी, Kungfu Express, Pure Aroma, मैचा मिल्क टी, सीमित मिल्क टी",
       "hero_title": "Pure Aroma Milk Tea — वैश्विक सीमित प्री-ऑर्डर",
@@ -221,18 +452,39 @@
       "cta_label": "Kickstarter पर ऑर्डर करें",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 चार जापानी कारीगर स्वाद", "body": "सर्वोच्च प्रीमियम: गुणवत्ता को महत्व देने वालों के लिए चार सावधानी से चुने गए स्वाद।"},
-        {"h2": "Xiangyin किशमिश मिल्क टी", "body": "शाही फलों की सुगंध एक नरम और परिष्कृत स्वाद में बुनी जाती है।"},
-        {"h2": "स्ट्रॉबेरी मिल्क टी", "body": "तीव्र फलों की सुगंध और नरम दूध प्यार जैसे मीठे स्वाद में घुल जाते हैं।"},
-        {"h2": "Green Apple मिल्क टी", "body": "ताज़ी फलों की खटास चाय की समृद्धि को स्वाद की परतों में संतुलित करती है।"},
-        {"h2": "क्लासिक मैचा मिल्क टी", "body": "प्रामाणिक जापानी चाय का स्वाद, मीठी समाप्ति, कारीगर की कला।"},
-        {"h2": "💎 हमें क्यों सपोर्ट करें?", "body": "अपनी तकनीक: क्रांतिकारी प्रीमियम चाय अनुभव के लिए मजबूत संरचना और मुख्य तकनीकें। विशेष इनाम: पहले वालों को वैश्विक सीमित संग्रह और लाभांश के साथ संस्थापक विशेषाधिकार मिलते हैं। मध्यमता को अस्वीकार करें, भविष्य का नेतृत्व करें।"},
-        {"h2": "🚀 अभी कार्रवाई करें", "body": "सीटें सीमित हैं। हर समर्थन परियोजना को बड़े पैमाने पर उत्पादन और वैश्विक विस्तार की ओर ले जाता है। अभी Kickstarter पर ऑर्डर करें।"}
+        {
+          "h2": "🌟 चार जापानी कारीगर स्वाद",
+          "body": "सर्वोच्च प्रीमियम: गुणवत्ता को महत्व देने वालों के लिए चार सावधानी से चुने गए स्वाद।"
+        },
+        {
+          "h2": "Xiangyin किशमिश मिल्क टी",
+          "body": "शाही फलों की सुगंध एक नरम और परिष्कृत स्वाद में बुनी जाती है।"
+        },
+        {
+          "h2": "स्ट्रॉबेरी मिल्क टी",
+          "body": "तीव्र फलों की सुगंध और नरम दूध प्यार जैसे मीठे स्वाद में घुल जाते हैं।"
+        },
+        {
+          "h2": "Green Apple मिल्क टी",
+          "body": "ताज़ी फलों की खटास चाय की समृद्धि को स्वाद की परतों में संतुलित करती है।"
+        },
+        {
+          "h2": "क्लासिक मैचा मिल्क टी",
+          "body": "प्रामाणिक जापानी चाय का स्वाद, मीठी समाप्ति, कारीगर की कला।"
+        },
+        {
+          "h2": "💎 हमें क्यों सपोर्ट करें?",
+          "body": "अपनी तकनीक: क्रांतिकारी प्रीमियम चाय अनुभव के लिए मजबूत संरचना और मुख्य तकनीकें। विशेष इनाम: पहले वालों को वैश्विक सीमित संग्रह और लाभांश के साथ संस्थापक विशेषाधिकार मिलते हैं। मध्यमता को अस्वीकार करें, भविष्य का नेतृत्व करें।"
+        },
+        {
+          "h2": "🚀 अभी कार्रवाई करें",
+          "body": "सीटें सीमित हैं। हर समर्थन परियोजना को बड़े पैमाने पर उत्पादन और वैश्विक विस्तार की ओर ले जाता है। अभी Kickstarter पर ऑर्डर करें।"
+        }
       ]
     },
     "vi": {
       "lang": "vi",
-      "title": "Pure Aroma Milk Tea — Đặt trước toàn cầu giới hạn | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Đặt Trước Toàn Cầu Giới Hạn",
       "description": "Bốn trà sữa premium tiệt trùng Nhật Bản. Đặt trước toàn cầu giới hạn trên Kickstarter từ 29 tháng 8 năm 2026. Chúng tôi mời những nhà sưu tầm và người sành trên toàn thế giới.",
       "keywords": "trà sữa, trà sữa trân châu, trà sữa premium, trà sữa tiệt trùng, Kungfu Express, Pure Aroma, trà sữa matcha, trà sữa giới hạn",
       "hero_title": "Pure Aroma Milk Tea — Đặt trước toàn cầu giới hạn",
@@ -240,18 +492,39 @@
       "cta_label": "Đặt trên Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Bốn hương vị thủ công Nhật Bản", "body": "Cao cấp nhất: bốn hương vị được chọn kỹ dành cho người trân trọng chất lượng."},
-        {"h2": "Trà sữa nho Xiangyin", "body": "Hương trái cây thanh tao quyện vào vị nhẹ nhàng và tinh tế."},
-        {"h2": "Trà sữa dâu tây", "body": "Hương trái cây đậm đà và sữa mềm hòa quyện thành vị ngọt ngào như tình yêu."},
-        {"h2": "Trà sữa Green Apple", "body": "Vị chua trái cây tươi mát cân bằng độ đậm của trà thành nhiều tầng hương."},
-        {"h2": "Trà sữa matcha cổ điển", "body": "Vị trà Nhật Bản nguyên bản, hậu vị ngọt, tay nghề bậc thầy."},
-        {"h2": "💎 Tại sao nên ủng hộ?", "body": "Công nghệ riêng: cấu trúc vững chắc và công nghệ then chốt cho trải nghiệm trà premium cách mạng. Phần thưởng độc quyền: những người đầu tiên nhận bộ sưu tập giới hạn toàn cầu và đặc quyền sáng lập với chia sẻ lợi nhuận. Từ chối sự tầm thường, dẫn dắt tương lai."},
-        {"h2": "🚀 Hành động ngay", "body": "Số lượng có hạn. Mỗi sự ủng hộ đưa dự án đến sản xuất hàng loạt và mở rộng toàn cầu. Đặt ngay trên Kickstarter."}
+        {
+          "h2": "🌟 Bốn hương vị thủ công Nhật Bản",
+          "body": "Cao cấp nhất: bốn hương vị được chọn kỹ dành cho người trân trọng chất lượng."
+        },
+        {
+          "h2": "Trà sữa nho Xiangyin",
+          "body": "Hương trái cây thanh tao quyện vào vị nhẹ nhàng và tinh tế."
+        },
+        {
+          "h2": "Trà sữa dâu tây",
+          "body": "Hương trái cây đậm đà và sữa mềm hòa quyện thành vị ngọt ngào như tình yêu."
+        },
+        {
+          "h2": "Trà sữa Green Apple",
+          "body": "Vị chua trái cây tươi mát cân bằng độ đậm của trà thành nhiều tầng hương."
+        },
+        {
+          "h2": "Trà sữa matcha cổ điển",
+          "body": "Vị trà Nhật Bản nguyên bản, hậu vị ngọt, tay nghề bậc thầy."
+        },
+        {
+          "h2": "💎 Tại sao nên ủng hộ?",
+          "body": "Công nghệ riêng: cấu trúc vững chắc và công nghệ then chốt cho trải nghiệm trà premium cách mạng. Phần thưởng độc quyền: những người đầu tiên nhận bộ sưu tập giới hạn toàn cầu và đặc quyền sáng lập với chia sẻ lợi nhuận. Từ chối sự tầm thường, dẫn dắt tương lai."
+        },
+        {
+          "h2": "🚀 Hành động ngay",
+          "body": "Số lượng có hạn. Mỗi sự ủng hộ đưa dự án đến sản xuất hàng loạt và mở rộng toàn cầu. Đặt ngay trên Kickstarter."
+        }
       ]
     },
     "id": {
       "lang": "id",
-      "title": "Pure Aroma Milk Tea — Pre-order global terbatas | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Pre-order Global Terbatas",
       "description": "Empat teh susu premium steril Jepang. Pre-order global terbatas di Kickstarter mulai 29 Agustus 2026. Kami mengundang kolektor dan penikmat dari seluruh dunia.",
       "keywords": "teh susu, bubble tea, teh susu premium, teh susu steril, Kungfu Express, Pure Aroma, teh susu matcha, teh susu terbatas",
       "hero_title": "Pure Aroma Milk Tea — Pre-order global terbatas",
@@ -259,18 +532,39 @@
       "cta_label": "Pesan di Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Empat rasa buatan tangan Jepang", "body": "Premium tertinggi: empat rasa pilihan untuk mereka yang menghargai kualitas."},
-        {"h2": "Teh susu kismis Xiangyin", "body": "Aroma buah yang mulia terjalin menjadi rasa yang lembut dan halus."},
-        {"h2": "Teh susu stroberi", "body": "Aroma buah yang kuat dan susu lembut menyatu menjadi rasa manis seperti cinta."},
-        {"h2": "Teh susu Green Apple", "body": "Kesegaran asam buah menyeimbangkan kekayaan teh dalam lapisan rasa."},
-        {"h2": "Teh susu matcha klasik", "body": "Rasa teh Jepang asli, aftertaste manis, keahlian master."},
-        {"h2": "💎 Mengapa mendukung?", "body": "Teknologi sendiri: struktur kokoh dan teknologi kunci untuk pengalaman teh premium revolusioner. Hadiah eksklusif: yang pertama mendapat koleksi edisi terbatas global dan hak pendiri dengan bagian laba. Tolak hal biasa, pimpin masa depan."},
-        {"h2": "🚀 Bertindak sekarang", "body": "Tempat terbatas. Setiap dukungan membawa proyek ke produksi massal dan ekspansi global. Pesan sekarang di Kickstarter."}
+        {
+          "h2": "🌟 Empat rasa buatan tangan Jepang",
+          "body": "Premium tertinggi: empat rasa pilihan untuk mereka yang menghargai kualitas."
+        },
+        {
+          "h2": "Teh susu kismis Xiangyin",
+          "body": "Aroma buah yang mulia terjalin menjadi rasa yang lembut dan halus."
+        },
+        {
+          "h2": "Teh susu stroberi",
+          "body": "Aroma buah yang kuat dan susu lembut menyatu menjadi rasa manis seperti cinta."
+        },
+        {
+          "h2": "Teh susu Green Apple",
+          "body": "Kesegaran asam buah menyeimbangkan kekayaan teh dalam lapisan rasa."
+        },
+        {
+          "h2": "Teh susu matcha klasik",
+          "body": "Rasa teh Jepang asli, aftertaste manis, keahlian master."
+        },
+        {
+          "h2": "💎 Mengapa mendukung?",
+          "body": "Teknologi sendiri: struktur kokoh dan teknologi kunci untuk pengalaman teh premium revolusioner. Hadiah eksklusif: yang pertama mendapat koleksi edisi terbatas global dan hak pendiri dengan bagian laba. Tolak hal biasa, pimpin masa depan."
+        },
+        {
+          "h2": "🚀 Bertindak sekarang",
+          "body": "Tempat terbatas. Setiap dukungan membawa proyek ke produksi massal dan ekspansi global. Pesan sekarang di Kickstarter."
+        }
       ]
     },
     "th": {
       "lang": "th",
-      "title": "Pure Aroma Milk Tea — รับจองทั่วโลกจำนวนจำกัด | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — รับจองทั่วโลกจำกัด",
       "description": "ชาไขมันพรีเมียมสเตอริลญี่ปุ่นสี่รสชาติ รับจองทั่วโลกจำนวนจำกัดบน Kickstarter ตั้งแต่วันที่ 29 สิงหาคม 2026 เราขอเชิญนักสะสมและคอชาไขมันจากทั่วโลก",
       "keywords": "ชาไขมัน, บับเบิลที, ชาไขมันพรีเมียม, ชาไขมันสเตอริล, Kungfu Express, Pure Aroma, ชาไขมันมัจฉะ, ชาไขมันจำกัด",
       "hero_title": "Pure Aroma Milk Tea — รับจองทั่วโลกจำนวนจำกัด",
@@ -278,18 +572,39 @@
       "cta_label": "สั่งบน Kickstarter",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 สี่รสชาติงานฝีมือญี่ปุ่น", "body": "พรีเมียมสูงสุด: สี่รสชาติที่คัดสรรมาให้ผู้ที่ให้คุณค่าคุณภาพ"},
-        {"h2": "ชาไขมันเหล่าอิ่น Xiangyin", "body": "กลิ่นผลไม้ชั้นดีผสานกันเป็นรสชาติที่นุ่มนวลและประณีต"},
-        {"h2": "ชาไขมันสตรอว์เบอร์รี่", "body": "กลิ่นผลไม้หอมเตะและนมเนียนผสานกันเป็นรสชาติหวานดั่งความรัก"},
-        {"h2": "ชาไขมัน Green Apple", "body": "ความเปรี้ยวสดชื่นของผลไม้ช่วยสมดุลความลึกของชาในหลายชั้นของรสชาติ"},
-        {"h2": "ชาไขมันมัจฉะคลาสสิก", "body": "รสชาญี่ปุ่นแท้ ขมตื้นหลังหวาน ฝีมือระดับมาสเตอร์"},
-        {"h2": "💎 ทำไมถึงควรสนับสนุน?", "body": "เทคโนโลยีของเราเอง: โครงสร้างแข็งแรงและเทคโนโลยีสำคัญสำหรับประสบการณ์ชาพรีเมียมปฏิวัติ รางวัลพิเศษ: กลุ่มแรกได้รับคอลเลกชันจำกัดทั่วโลกและสิทธิผู้ก่อตั้งพร้อมส่วนแบ่งกำไร ปฏิเสธความธรรมดา นำทางอนาคต"},
-        {"h2": "🚀 ลงมือเลย", "body": "ที่นั่งจำกัด การสนับสนุนแต่ละครั้งนำโครงการเข้าสู่การผลิตมวลและขยายทั่วโลก สั่งเลยบน Kickstarter"}
+        {
+          "h2": "🌟 สี่รสชาติงานฝีมือญี่ปุ่น",
+          "body": "พรีเมียมสูงสุด: สี่รสชาติที่คัดสรรมาให้ผู้ที่ให้คุณค่าคุณภาพ"
+        },
+        {
+          "h2": "ชาไขมันเหล่าอิ่น Xiangyin",
+          "body": "กลิ่นผลไม้ชั้นดีผสานกันเป็นรสชาติที่นุ่มนวลและประณีต"
+        },
+        {
+          "h2": "ชาไขมันสตรอว์เบอร์รี่",
+          "body": "กลิ่นผลไม้หอมเตะและนมเนียนผสานกันเป็นรสชาติหวานดั่งความรัก"
+        },
+        {
+          "h2": "ชาไขมัน Green Apple",
+          "body": "ความเปรี้ยวสดชื่นของผลไม้ช่วยสมดุลความลึกของชาในหลายชั้นของรสชาติ"
+        },
+        {
+          "h2": "ชาไขมันมัจฉะคลาสสิก",
+          "body": "รสชาญี่ปุ่นแท้ ขมตื้นหลังหวาน ฝีมือระดับมาสเตอร์"
+        },
+        {
+          "h2": "💎 ทำไมถึงควรสนับสนุน?",
+          "body": "เทคโนโลยีของเราเอง: โครงสร้างแข็งแรงและเทคโนโลยีสำคัญสำหรับประสบการณ์ชาพรีเมียมปฏิวัติ รางวัลพิเศษ: กลุ่มแรกได้รับคอลเลกชันจำกัดทั่วโลกและสิทธิผู้ก่อตั้งพร้อมส่วนแบ่งกำไร ปฏิเสธความธรรมดา นำทางอนาคต"
+        },
+        {
+          "h2": "🚀 ลงมือเลย",
+          "body": "ที่นั่งจำกัด การสนับสนุนแต่ละครั้งนำโครงการเข้าสู่การผลิตมวลและขยายทั่วโลก สั่งเลยบน Kickstarter"
+        }
       ]
     },
     "tr": {
       "lang": "tr",
-      "title": "Pure Aroma Milk Tea — Küresel sınırlı ön sipariş | Kungfu Express",
+      "title": "Pure Aroma Milk Tea — Küresel Sınırlı Ön Sipariş",
       "description": "Dört Japon steril premium süt çayı. 29 Ağustos 2026'dan itibaren Kickstarter'da küresel sınırlı ön sipariş. Dünyanın her yerinden koleksiyonerleri ve uzmanları davet ediyoruz.",
       "keywords": "süt çayı, bubble tea, premium süt çayı, steril süt çayı, Kungfu Express, Pure Aroma, matcha süt çayı, sınırlı süt çayı",
       "hero_title": "Pure Aroma Milk Tea — Küresel sınırlı ön sipariş",
@@ -297,13 +612,34 @@
       "cta_label": "Kickstarter'da sipariş ver",
       "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
       "sections": [
-        {"h2": "🌟 Dört Japon el yapımı lezzet", "body": "En yüksek premium: kaliteye önem verenler için özenle seçilmiş dört lezzet."},
-        {"h2": "Xiangyin Kuru Üzüm Süt Çayı", "body": "Asil meyve aromaları yumuşak ve zarif bir tatta birleşir."},
-        {"h2": "Çilekli Süt Çayı", "body": "Yoğun meyve aroması ve yumuşak süt, aşk gibi tatlı bir tatta buluşur."},
-        {"h2": "Green Apple Süt Çayı", "body": "Taze meyve ekşiliği, çayın zenginliğini tat katmanlarıyla dengeler."},
-        {"h2": "Klasik Matcha Süt Çayı", "body": "Otantik Japon çay lezzeti, tatlı bitiş, usta işçiliği."},
-        {"h2": "💎 Neden bizi desteklemelisiniz?", "body": "Kendi teknolojimiz: devrim niteliğinde bir premium çay deneyimi için sağlam yapı ve temel teknolojiler. Özel ödüller: ilk destekleyenler küresel sınırlı koleksiyonu ve kâr payıyla kurucu ayrıcalıklarını alır. Sıradanlığı reddedin, geleceğe öncülük edin."},
-        {"h2": "🚀 Hemen harekete geç", "body": "Yerler sınırlı. Her destek projeyi kitle üretime ve küresel genişlemeye taşır. Şimdi Kickstarter'da sipariş verin."}
+        {
+          "h2": "🌟 Dört Japon el yapımı lezzet",
+          "body": "En yüksek premium: kaliteye önem verenler için özenle seçilmiş dört lezzet."
+        },
+        {
+          "h2": "Xiangyin Kuru Üzüm Süt Çayı",
+          "body": "Asil meyve aromaları yumuşak ve zarif bir tatta birleşir."
+        },
+        {
+          "h2": "Çilekli Süt Çayı",
+          "body": "Yoğun meyve aroması ve yumuşak süt, aşk gibi tatlı bir tatta buluşur."
+        },
+        {
+          "h2": "Green Apple Süt Çayı",
+          "body": "Taze meyve ekşiliği, çayın zenginliğini tat katmanlarıyla dengeler."
+        },
+        {
+          "h2": "Klasik Matcha Süt Çayı",
+          "body": "Otantik Japon çay lezzeti, tatlı bitiş, usta işçiliği."
+        },
+        {
+          "h2": "💎 Neden bizi desteklemelisiniz?",
+          "body": "Kendi teknolojimiz: devrim niteliğinde bir premium çay deneyimi için sağlam yapı ve temel teknolojiler. Özel ödüller: ilk destekleyenler küresel sınırlı koleksiyonu ve kâr payıyla kurucu ayrıcalıklarını alır. Sıradanlığı reddedin, geleceğe öncülük edin."
+        },
+        {
+          "h2": "🚀 Hemen harekete geç",
+          "body": "Yerler sınırlı. Her destek projeyi kitle üretime ve küresel genişlemeye taşır. Şimdi Kickstarter'da sipariş verin."
+        }
       ]
     }
   }
