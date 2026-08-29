@@ -57,6 +57,11 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
   .btn{width:100%;text-align:center}
   .hero .btn{width:100%}
 }
+  .share{margin:30px 0;text-align:center}
+  .share h3{color:var(--gold);font-size:1.1rem;margin-bottom:12px}
+  .share-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .share-row button{cursor:pointer;border:none;border-radius:8px;padding:10px 14px;font-size:.95rem;background:var(--accent);color:#0c0a06;font-weight:600;width:auto}
+  .share-row button:hover{opacity:.85}
 </style>
 </head>
 <body>
@@ -89,12 +94,41 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
   
    <section><h2>Действуй сейчас</h2><p>Места ограничены. Каждая поддержка продвигает проект к массовому производству и глобальному масштабированию. Закажи сейчас на Kickstarter.</p></section>
   
+  <div class="share">
+    <h3>分享這頁，叫多啲人支持</h3>
+    <div class="share-row">
+      <button data-p="x">X</button>
+      <button data-p="facebook">Facebook</button>
+      <button data-p="reddit">Reddit</button>
+      <button data-p="line">LINE</button>
+      <button data-p="whatsapp">WhatsApp</button>
+      <button data-p="telegram">Telegram</button>
+      <button data-p="weibo">微博</button>
+      <button data-p="copy">複製連結</button>
+    </div>
+  </div>
 </div>
 <footer class="wrap">© 2026 Kungfu Express. Global limited pre-order.</footer>
   <script>
     document.querySelectorAll('a[href*="kickstarter"]').forEach(function(a){
       a.addEventListener('click', function(){
         try { navigator.sendBeacon('/api/event?type=cta&lang=' + encodeURIComponent(document.documentElement.lang)); } catch(e) {}
+      });
+    });
+    document.querySelectorAll('.share-row button').forEach(function(b){
+      b.addEventListener('click', function(){
+        var p=b.dataset.p, u=encodeURIComponent(location.href), t=encodeURIComponent(document.title);
+        var maps={
+          x:'https://twitter.com/intent/tweet?url='+u+'&text='+t,
+          facebook:'https://www.facebook.com/sharer/sharer.php?u='+u,
+          reddit:'https://www.reddit.com/submit?url='+u+'&title='+t,
+          line:'https://line.me/R/msg/text/?'+u,
+          whatsapp:'https://api.whatsapp.com/send?text='+t+'%20'+u,
+          telegram:'https://t.me/share/url?url='+u+'&text='+t,
+          weibo:'http://service.weibo.com/share/share.php?url='+u+'&title='+t
+        };
+        if(p==='copy'){ try{navigator.clipboard.writeText(location.href);alert('連結已複製');}catch(e){} return; }
+        window.open(maps[p],'_blank','noopener');
       });
     });
   </script>
