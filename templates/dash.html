@@ -141,7 +141,7 @@ async function loadStats(){
 }
 loadStats();
 
-function submitSe(){
+async function submitSe(){
   const r=await fetch('/api/submit',{method:'POST',headers:$('key').value?{'x-admin-key':$('key').value}:{}}); const d=await r.json();
   $('subse').textContent=JSON.stringify(d.results)+' — '+d.note;
 }
