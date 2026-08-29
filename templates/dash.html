@@ -61,6 +61,12 @@
 </div>
 
 <div class="card">
+  <h3>👁 Live site preview</h3>
+  <iframe src="/" style="width:100%;height:440px;border:1px solid #e5e7eb;border-radius:10px"></iframe>
+  <p class="muted"><a href="/" target="_blank">Open full page ↗</a> · <a href="/zh" target="_blank">中文版 ↗</a></p>
+</div>
+
+<div class="card">
   <h3>Live files</h3>
   <p><a href="/sitemap.xml" target="_blank">/sitemap.xml</a> · <a href="/robots.txt" target="_blank">/robots.txt</a> · <a href="/" target="_blank">/ (landing)</a></p>
   <button onclick="submitSe()">🚀 Submit sitemap to Google &amp; Bing</button>
@@ -101,6 +107,7 @@ async function submitSe(){
   const r=await fetch('/api/submit',{method:'POST',headers:$('key').value?{'x-admin-key':$('key').value}:{}}); const d=await r.json();
   $('subse').textContent=JSON.stringify(d.results)+' — '+d.note;
 }
+window.addEventListener('load', () => { loadSite(); seoCheck(); });
 </script>
 </body>
 </html>
