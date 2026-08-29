@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}"{% if lang == 'ar' %} dir="rtl"{% endif %}>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,7 +49,7 @@
     <p class="lead">{{ p.hero_lead }}</p>
     <a class="btn" href="{{ p.cta_url }}" target="_blank" rel="noopener">{{ p.cta_label }}</a>
     <div class="langs">
-      {% set names = {'en':'EN','zh':'中文','ja':'日本語','ko':'한국어','es':'ES'} %}
+      {% set names = {'en':'EN','zh':'中文','ja':'日本語','ko':'한국어','es':'ES','ar':'العربية'} %}
       {% for l in site.pages %}{% if l != lang %}<a href="/{{ l }}">{{ names.get(l, l|upper) }}</a> {% endif %}{% endfor %}
     </div>
   </div>
