@@ -33,6 +33,8 @@
 
 <div class="card" id="editor" style="display:none">
   <h3>Page SEO &amp; content</h3>
+  <label>Site domain (e.g. https://milktea.example.com — used for canonical, hreflang &amp; sitemap)</label>
+  <input id="domain" placeholder="https://your-domain.com" />
   <div class="row">
     <div><label>Title (30–60)</label><input id="title"/></div>
     <div><label>Hero title</label><input id="hero_title"/></div>
@@ -99,6 +101,7 @@ const hd=()=>($('key').value?{headers:{'x-admin-key':$('key').value}}:{});
 async function loadSite(){
   const r=await fetch('/api/site',hd()); if(!r.ok){alert('unauthorized');return;}
   const s=await r.json(); const p=s.pages[$('lang').value]||{};
+  $('domain').value=s.domain||'';
   ['title','hero_title','description','keywords','hero_lead','cta_label','cta_url'].forEach(k=>$(k).value=p[k]||'');
   $('sections').value=(p.sections||[]).map(x=>x.h2+' || '+x.body).join('\n');
   $('editor').style.display='block';
@@ -106,6 +109,7 @@ async function loadSite(){
 async function saveSite(){
   const r=await fetch('/api/site',hd()); const s=await r.json();
   const lang=$('lang').value;
+  s.domain=$('domain').value.trim();
   s.pages[lang]={
     lang, title:$('title').value, hero_title:$('hero_title').value, description:$('description').value,
     keywords:$('keywords').value, hero_lead:$('hero_lead').value, cta_label:$('cta_label').value, cta_url:$('cta_url').value,

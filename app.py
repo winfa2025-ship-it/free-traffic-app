@@ -215,9 +215,21 @@ def stats_view():
 @app.route('/sitemap.xml')
 def sitemap():
     site = load()
-    urls = [f'<url><loc>{site["domain"]}/</loc></url>'] + \
-           [f'<url><loc>{site["domain"]}/{l}</loc></url>' for l in site['pages']]
-    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>'
+    dom = site['domain'].rstrip('/')
+    langs = list(site['pages'].keys())
+
+    def alts():
+        out = f'    <xhtml:link rel="alternate" hreflang="x-default" href="{dom}/" />\n'
+        for l in langs:
+            out += f'    <xhtml:link rel="alternate" hreflang="{l}" href="{dom}/{l}" />\n'
+        return out
+
+    urls = [f'  <url>\n    <loc>{dom}/</loc>\n{alts()}  </url>']
+    for l in langs:
+        urls.append(f'  <url>\n    <loc>{dom}/{l}</loc>\n{alts()}  </url>')
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n' \
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ' \
+          'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(urls) + '\n</urlset>'
     return Response(xml, mimetype='application/xml')
 
 
@@ -233,19 +245,23 @@ def seo_check():
         return {'error': 'unauthorized'}, 401
     site = load()
     lang = request.args.get('lang') or site['default_lang']
-    p = site['pages'].get(lang, {})
     tips = []
-    t = p.get('title', '')
-    if len(t) < 30 or len(t) > 60:
-        tips.append(f'title length {len(t)} — aim 30-60 chars')
-    d = p.get('description', '')
-    if len(d) < 70 or len(d) > 160:
-        tips.append(f'description length {len(d)} — aim 70-160 chars')
-    if not p.get('keywords'):
-        tips.append('add keywords')
-    if len(p.get('sections', [])) < 2:
-        tips.append('add more content sections (>=2) for richer indexing')
-    return {'lang': lang, 'score': max(0, 100 - len(tips) * 15), 'tips': tips}
+    dom = site.get('domain', '').rstrip('/')
+    if 'your-domain.com' in dom or dom in ('', 'https://your-domain.com'):
+        tips.append('Set your real domain in the dashboard — canonical/hreflang/sitemap currently point to the placeholder.')
+    for l, p in site['pages'].items():
+        t = p.get('title', '')
+        if len(t) < 30 or len(t) > 60:
+            tips.append(f'[{l}] title length {len(t)} — aim 30-60 chars')
+        d = p.get('description', '')
+        if len(d) < 70 or len(d) > 160:
+            tips.append(f'[{l}] description length {len(d)} — aim 70-160 chars')
+        if not p.get('keywords'):
+            tips.append(f'[{l}] add keywords')
+        if len(p.get('sections', [])) < 3:
+            tips.append(f'[{l}] add more content sections (>=3) for richer indexing')
+    p = site['pages'].get(lang, {})
+    return {'lang': lang, 'score': max(0, 100 - len(tips) * 12), 'tips': tips}
 
 
 @app.route('/dashboard', methods=['GET', 'OPTIONS'])

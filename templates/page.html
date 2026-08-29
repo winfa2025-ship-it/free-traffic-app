@@ -9,6 +9,19 @@
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="{{ site.domain }}/{{ lang }}" />
   {{ alts|safe }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {"@type": "Organization", "name": "Kungfu Express", "url": "{{ site.domain }}"},
+      {"@type": "Product", "name": {{ p.title|tojson }}, "description": {{ p.description|tojson }},
+       "url": "{{ site.domain }}/{{ lang }}", "inLanguage": "{{ lang }}",
+       "brand": {"@type": "Brand", "name": "Pure Aroma"},
+       "offers": {"@type": "Offer", "url": {{ p.cta_url|tojson }}, "availability": "https://schema.org/InStock",
+                  "priceCurrency": "USD", "availabilityStarts": "2026-08-29"}}
+    ]
+  }
+  </script>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ p.title }}" />
 <meta property="og:description" content="{{ p.description }}" />
