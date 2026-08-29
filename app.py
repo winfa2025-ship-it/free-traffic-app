@@ -10,6 +10,7 @@ ADMINS_FILE = os.path.join(DATA, 'admin.json')
 ADMIN_KEY = os.getenv('ADMIN_KEY', '')
 ADMIN_EMAIL = os.getenv('ADMIN_EMAIL', 'admin@local')
 ADMIN_PW = os.getenv('ADMIN_PASSWORD', '')
+REGISTER_CODE = os.getenv('REGISTER_CODE', '')
 SECRET = os.getenv('TOKEN_SECRET', 'change-me')
 
 
@@ -38,6 +39,13 @@ def verify_pw(email, pw):
     salt, h = a['hash'].split(':')
     test = hashlib.scrypt(pw.encode(), salt=bytes.fromhex(salt), n=16384, r=8, p=1, dklen=32).hex()
     return hmac.compare_digest(test, h)
+
+
+def add_admin(email, pw):
+    admins = load_admins()
+    admins[email.lower()] = {'hash': hash_pw(pw)}
+    with open(ADMINS_FILE, 'w') as f:
+        json.dump(admins, f)
 
 
 def hmac_token(data, action):
@@ -81,6 +89,7 @@ def save(d):
 PAGE = open(os.path.join(os.path.dirname(__file__), 'templates/page.html'), encoding='utf-8').read()
 DASH = open(os.path.join(os.path.dirname(__file__), 'templates/dash.html'), encoding='utf-8').read()
 LOGIN = open(os.path.join(os.path.dirname(__file__), 'templates/login.html'), encoding='utf-8').read()
+REGISTER = open(os.path.join(os.path.dirname(__file__), 'templates/register.html'), encoding='utf-8').read()
 
 
 # ---------- routes ----------
@@ -101,6 +110,26 @@ def login():
 def logout():
     resp = redirect('/login')
     resp.set_cookie('sess', '', max_age=0)
+    return resp
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'GET':
+        return render_template_string(REGISTER, reg_code=REGISTER_CODE)
+    email = (request.form.get('email') or (request.json or {}).get('email', '')).strip().lower()
+    pw = request.form.get('password') or (request.json or {}).get('password', '')
+    code = request.form.get('code') or (request.json or {}).get('code', '') or ''
+    rc = REGISTER_CODE
+    if rc and code != rc:
+        return render_template_string(REGISTER, error='Invalid invite code', reg_code=REGISTER_CODE)
+    if not email or '@' not in email or len(pw) < 6:
+        return render_template_string(REGISTER, error='Need a valid email and password (>=6 chars)', reg_code=REGISTER_CODE)
+    if email in load_admins():
+        return render_template_string(REGISTER, error='Account exists — please login', reg_code=REGISTER_CODE)
+    add_admin(email, pw)
+    resp = redirect('/dashboard')
+    resp.set_cookie('sess', sess_token(email), httponly=True, samesite='Lax', max_age=2592000)
     return resp
 
 

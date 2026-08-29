@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Login — Free Traffic Control Center</title>
+<title>Register — Free Traffic Control Center</title>
 <style>
   body{font-family:system-ui,sans-serif;background:#0e0b07;color:#f6efe2;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}
   .box{background:#1a140c;border:1px solid #2a2114;border-radius:14px;padding:28px;width:340px}
@@ -12,20 +12,22 @@
   input{width:100%;padding:10px;box-sizing:border-box;border-radius:8px;border:1px solid #3a2f1c;background:#0e0b07;color:#f6efe2}
   button{width:100%;margin-top:18px;padding:11px;background:#d9b25f;color:#1a140c;border:none;border-radius:8px;font-weight:700;cursor:pointer}
   .err{color:#ff8a8a;font-size:.9rem}
+  a{color:#d9b25f;font-size:.9rem}
 </style>
 </head>
 <body>
 <div class="box">
-  <h2>🔐 Admin Login</h2>
+  <h2>📝 Create admin account</h2>
   {% if error %}<p class="err">{{ error }}</p>{% endif %}
-  <form method="post" action="/login">
+  <form method="post" action="/register">
     <label>Email</label>
     <input name="email" type="email" required />
-    <label>Password</label>
+    <label>Password (>=6 chars)</label>
     <input name="password" type="password" required />
-    <button type="submit">Sign in</button>
+    {% if reg_code %}<label>Invite code</label><input name="code" />{% endif %}
+    <button type="submit">Register</button>
   </form>
-  <p style="margin-top:14px"><a href="/register">No account? Create one</a></p>
+  <p style="margin-top:14px"><a href="/login">Already have an account? Login</a></p>
 </div>
 </body>
 </html>
