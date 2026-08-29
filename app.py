@@ -75,6 +75,12 @@ def check_auth():
     return False
 
 
+def body():
+    if request.form:
+        return request.form.to_dict()
+    return request.get_json(silent=True) or {}
+
+
 # ---------- site data ----------
 def load():
     with open(SITE_FILE, encoding='utf-8') as f:
@@ -97,8 +103,9 @@ REGISTER = open(os.path.join(os.path.dirname(__file__), 'templates/register.html
 def login():
     if request.method == 'GET':
         return render_template_string(LOGIN)
-    email = (request.form.get('email') or (request.json or {}).get('email', '')).strip()
-    pw = (request.form.get('password') or (request.json or {}).get('password', ''))
+    b = body()
+    email = (b.get('email') or '').strip()
+    pw = b.get('password') or ''
     if verify_pw(email, pw):
         resp = redirect('/dashboard')
         resp.set_cookie('sess', sess_token(email), httponly=True, samesite='Lax', max_age=2592000)
@@ -117,9 +124,10 @@ def logout():
 def register():
     if request.method == 'GET':
         return render_template_string(REGISTER, reg_code=REGISTER_CODE)
-    email = (request.form.get('email') or (request.json or {}).get('email', '')).strip().lower()
-    pw = request.form.get('password') or (request.json or {}).get('password', '')
-    code = request.form.get('code') or (request.json or {}).get('code', '') or ''
+    b = body()
+    email = (b.get('email') or '').strip().lower()
+    pw = b.get('password') or ''
+    code = b.get('code') or ''
     rc = REGISTER_CODE
     if rc and code != rc:
         return render_template_string(REGISTER, error='Invalid invite code', reg_code=REGISTER_CODE)
@@ -194,7 +202,7 @@ def site_api():
         return {'error': 'unauthorized'}, 401
     if request.method == 'GET':
         return load()
-    save(request.json)
+    save(body())
     return {'ok': True}
 
 
