@@ -39,6 +39,63 @@
         {"h2": "💎 為何成為支持者？", "body": "原創技術：擁有獨立核心技術與穩健營運架構，致力革命性頂級茶飲體驗。限量獎勵：早期支持者解鎖全球限量收藏及創辦人級權益與分紅。拒絕平庸，引領未來：參與重塑餐飲市場的生意。"},
         {"h2": "🚀 立即行動，立即預訂", "body": "名額有限。您的每一分支持都推動項目邁向量產與全球擴展。立即前往 Kickstarter 預購。"}
       ]
+    },
+    "ja": {
+      "lang": "ja",
+      "title": "ピュアアロマミルクティー — 世界限定予約販売 | Kungfu Express",
+      "description": "4種の日本スタイル無菌ミルクティー。2026年8月29日よりKickstarterで世界限定予約販売開始。コレクターや愛好家の皆様へ。",
+      "keywords": "ミルクティー, バブルティー, プレミアムミルクティー, 無菌ミルクティー, Kungfu Express, ピュアアロマ, 抹茶ミルクティー, 限定ミルクティー",
+      "hero_title": "ピュアアロマミルクティー — 世界限定予約販売",
+      "hero_lead": "4種の新しい無菌ピュアアロマミルクティーのクラウドファンディングが2026年8月29日にKickstarterで開始。世界中のコレクターと愛好家をご招待します。",
+      "cta_label": "Kickstarterで予約する",
+      "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
+      "sections": [
+        {"h2": "🌟 4種の日本スタイル芸術的フレーバー", "body": "最高級の味わい：厳選された4つのフレーバーを、高品質を求める方々へ。"},
+        {"h2": "香印レーズンミルクティー", "body": "上品な果実の香りが織りなす、甘く繊細なラグジュアリーな味わい。"},
+        {"h2": "ストロベリーミルクティー", "body": "濃厚な果実香とまろやかなミルク香が融合し、恋のような甘さに。"},
+        {"h2": "グリーンアップルミルクティー", "body": "爽やかな果酸がミルクティーのコクを整え、層のある味わいに。"},
+        {"h2": "クラシック抹茶ミルクティー", "body": "本格的な日本茶の風味、甘い余韻、職人の技。"},
+        {"h2": "💎 なぜサポーターになるのか", "body": "独自技術：堅実な運営と独自コア技術で、革新的な最高級ティー体験を。限定特典：早期支援者は世界限定コレクションと創設者特典・配当を獲得。平凡を拒み、未来を導く。"},
+        {"h2": "🚀 今すぐ行動", "body": "枠限定。ご支援の一つひとつが量産と世界展開を推進します。今すぐKickstarterで予約を。"}
+      ]
+    },
+    "ko": {
+      "lang": "ko",
+      "title": "퓨어 아로마 밀크티 — 전 세계 한정 예약 판매 | Kungfu Express",
+      "description": "4가지 일본풍 무균 밀크티. 2026년 8월 29일 Kickstarter에서 전 세계 한정 예약 판매 시작. 컬렉터와 애호가 여러분을 초대합니다.",
+      "keywords": "밀크티, 버블티, 프리미엄 밀크티, 무균 밀크티, Kungfu Express, 퓨어 아로마, 말차 밀크티, 한정 밀크티",
+      "hero_title": "퓨어 아로마 밀크티 — 전 세계 한정 예약 판매",
+      "hero_lead": "4가지 새로운 무균 퓨어 아로마 밀크티 크라우드펀딩이 2026년 8월 29일 Kickstarter에서 시작되었습니다.",
+      "cta_label": "Kickstarter에서 예약",
+      "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
+      "sections": [
+        {"h2": "🌟 4가지 일본풍 예술 풍미", "body": "최고급 맛: 엄선된 4가지 풍미를 고품질을 추구하는 분께."},
+        {"h2": "샹인 건포도 밀크티", "body": "고귀한 과일 향이 어우러진 달콤하고 섬세한 럭셔리 풍미."},
+        {"h2": "딸기 밀크티", "body": "진한 과일 향과 부드러운 우유 향이 사랑스러운 단맛으로 어우러집니다."},
+        {"h2": "그린 애플 밀크티", "body": "상큼한 과일 산미가 밀크티의 진함을 균형 있게 잡아 줍니다."},
+        {"h2": "클래식 말차 밀크티", "body": "정통 일본 차 풍미, 단 뒷맛, 장인의 기술."},
+        {"h2": "💎 왜 서포터가 되나요?", "body": "독자 기술: 견실한 운영과 독자 핵심 기술로 혁신적인 최고급 차 경험을. 한정 특전: 얼리 버드는 전 세계 한정 컬렉션과 창업자 특전·배당을 획득. 평범을 거부하고 미래를 선도하세요."},
+        {"h2": "🚀 지금 행동하세요", "body": "수량 한정. 여러분의 지원이 양산과 글로벌 확장을 이끕니다. 지금 Kickstarter에서 예약하세요."}
+      ]
+    },
+    "es": {
+      "lang": "es",
+      "title": "Pure Aroma Milk Tea — Preventa Limitada Global | Kungfu Express",
+      "description": "Cuatro tés con leche japoneses asépticos premium. Preventa limitada global en Kickstarter desde el 29 de agosto de 2026. Invitamos a coleccionistas y conocedores.",
+      "keywords": "té con leche, bubble tea, té con leche premium, té con leche aséptico, Kungfu Express, Pure Aroma, té matcha, té con leche limitado",
+      "hero_title": "Pure Aroma Milk Tea — Preventa Limitada Global",
+      "hero_lead": "El crowdfunding de cuatro nuevos tés con leche asépticos Pure Aroma se lanzó en Kickstarter el 29 de agosto de 2026.",
+      "cta_label": "Reservar en Kickstarter",
+      "cta_url": "https://www.kickstarter.com/projects/kungfuexpress/a-brand-new-factory-producing-four-flavors-of-milk-tea/description",
+      "sections": [
+        {"h2": "🌟 Cuatro Sabores Artísticos Japoneses", "body": "Lujo supremo: cuatro sabores seleccionados para quienes buscan alta calidad."},
+        {"h2": "Té con Leche de Pasa Xiangyin", "body": "Aromas frutales nobles entrelazados en un sabor dulce y delicado."},
+        {"h2": "Té con Leche de Fresa", "body": "Aroma frutal intenso y suave leche se funden en un sabor dulce como el amor."},
+        {"h2": "Té con Leche de Manzana Verde", "body": "Acidez frutal fresca equilibra la riqueza del té con leche."},
+        {"h2": "Té con Leche Matcha Clásico", "body": "Auténtico sabor japonés del té, dulce retrogusto, artesanía de maestro."},
+        {"h2": "💎 ¿Por qué ser patrocinador?", "body": "Tecnología propia: estructura sólida y tecnología central para una experiencia de té premium. Recompensas limitadas: los primeros obtienen colección limitada y beneficios de fundador. Rechaza la mediocridad, lidera el futuro."},
+        {"h2": "🚀 Actúa ya", "body": "Plazas limitadas. Cada apoyo impulsa la producción global. Reserva ahora en Kickstarter."}
+      ]
     }
   }
 }
