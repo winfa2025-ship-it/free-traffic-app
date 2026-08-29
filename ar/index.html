@@ -77,5 +77,12 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
   
 </div>
 <footer class="wrap">© 2026 Kungfu Express. Global limited pre-order.</footer>
-</body>
+  <script>
+    document.querySelectorAll('a[href*="kickstarter"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        try { navigator.sendBeacon('/api/event?type=cta&lang=' + encodeURIComponent(document.documentElement.lang)); } catch(e) {}
+      });
+    });
+  </script>
+  </body>
 </html>

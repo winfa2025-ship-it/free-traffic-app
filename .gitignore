@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 data/app.db
 *.log
+data/stats.db

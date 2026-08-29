@@ -75,6 +75,12 @@
 </div>
 
 <div class="card">
+  <h3>📊 Traffic statistics</h3>
+  <p><button onclick="loadStats()">🔄 Refresh stats</button></p>
+  <div id="stats"></div>
+</div>
+
+<div class="card">
   <h3>🌍 Submit to all global search engines</h3>
   <p class="muted">Paste your <code>/sitemap.xml</code> URL into each webmaster tool below. Yahoo / DuckDuckGo / Ecosia / Qwant use Bing's index, so Bing covers them.</p>
   <ul>
@@ -116,7 +122,22 @@ async function sc(){
   const r=await fetch('/api/searchconsole',hd()); const d=await r.json();
   $('sc').innerHTML=d.queries?.length?d.queries.map(q=>`${q.query} — ${q.clicks} clicks / ${q.impressions} impr`).join('<br>'):(d.setup||d.error||'no data');
 }
-async function submitSe(){
+async function loadStats(){
+  fetch('/api/stats-view').then(r=>r.json()).then(d=>{
+    const max = Math.max(1, ...d.last7.map(x=>x.n));
+    const bars = d.last7.map(x=>'<div style="flex:1;text-align:center"><div style="height:'+(x.n/max*60)+'px;background:#6c5ce7;border-radius:3px"></div><div class="muted" style="font-size:11px">'+x.date.slice(5)+'</div><div>'+x.n+'</div></div>').join('');
+    const langs = Object.keys(d.by_lang).map(l=>l+': '+d.by_lang[l]).join(' · ') || '—';
+    const refs = d.top_ref.length ? d.top_ref.map(r=>'<li>'+r.replace(/</g,'&lt;')+'</li>').join('') : '<li class="muted">—</li>';
+    document.getElementById('stats').innerHTML =
+      '<p><b>'+d.total+'</b> page views · <b>'+d.cta+'</b> CTA clicks</p>'+
+      '<p class="muted">By language: '+langs+'</p>'+
+      '<div style="display:flex;gap:4px;align-items:flex-end;margin:10px 0;height:80px">'+bars+'</div>'+
+      '<p class="muted">Top referrers:</p><ul style="font-size:12px;word-break:break-all">'+refs+'</ul>';
+  }).catch(e=>{document.getElementById('stats').innerHTML='<p class="muted">failed</p>';});
+}
+loadStats();
+
+function submitSe(){
   const r=await fetch('/api/submit',{method:'POST',headers:$('key').value?{'x-admin-key':$('key').value}:{}}); const d=await r.json();
   $('subse').textContent=JSON.stringify(d.results)+' — '+d.note;
 }
