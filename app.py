@@ -1,6 +1,7 @@
-import os, json, datetime, hashlib, secrets, hmac, base64, sqlite3, urllib.request, urllib.parse, re, time
+import os, json, datetime, hashlib, secrets, hmac, base64, sqlite3, urllib.request, urllib.parse, re, time, subprocess, sys
 from collections import defaultdict
 from flask import Flask, request, Response, render_template_string, redirect
+from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -598,6 +599,108 @@ def site_api():
         return load()
     save(body())
     return {'ok': True}
+
+
+# ---------- media uploads (hero video + product photos) ----------
+UPLOAD_DIR = os.path.join(os.path.dirname(__file__), 'static', 'uploads')
+ALLOWED_IMAGE_EXT = {'png', 'jpg', 'jpeg', 'webp', 'gif', 'avif'}
+ALLOWED_VIDEO_EXT = {'mp4', 'webm', 'mov', 'm4v', 'ogv'}
+
+
+@app.route('/api/upload', methods=['POST'])
+def upload():
+    if not check_auth():
+        return {'error': 'unauthorized'}, 401
+    f = request.files.get('file')
+    if not f or not f.filename:
+        return {'error': 'no file'}, 400
+    ext = f.filename.rsplit('.', 1)[-1].lower() if '.' in f.filename else ''
+    kind = (request.form.get('kind') or 'image').lower()
+    allowed = ALLOWED_VIDEO_EXT if kind == 'video' else ALLOWED_IMAGE_EXT
+    if ext not in allowed:
+        label = 'mp4 / webm / mov' if kind == 'video' else 'png / jpg / webp'
+        return {'error': f'unsupported {kind} type — use {label}'}, 400
+    try:
+        os.makedirs(UPLOAD_DIR, exist_ok=True)
+        name = f"{secrets.token_hex(6)}_{secure_filename(f.filename)}"
+        f.save(os.path.join(UPLOAD_DIR, name))
+    except Exception as e:
+        return {'error': str(e)}, 500
+    return {'ok': True, 'url': f"static/uploads/{name}", 'ext': ext, 'kind': kind}
+
+
+@app.route('/api/media/delete', methods=['POST'])
+def media_delete():
+    if not check_auth():
+        return {'error': 'unauthorized'}, 401
+    url = (body().get('url') or '').strip()
+    # Only allow removal of files we manage, under static/uploads/
+    rel = url.lstrip('/')
+    if not rel.startswith('static/uploads/'):
+        return {'error': 'invalid path'}, 400
+    safe = secure_filename(os.path.basename(rel))
+    target = os.path.normpath(os.path.join(UPLOAD_DIR, safe))
+    if not target.startswith(os.path.normpath(UPLOAD_DIR)):
+        return {'error': 'invalid path'}, 400
+    try:
+        if os.path.isfile(target):
+            os.remove(target)
+        return {'ok': True}
+    except Exception as e:
+        return {'error': str(e)}, 500
+
+
+@app.route('/api/publish', methods=['POST'])
+def publish():
+    """Rebuild the static public site and push media + config to GitHub so the
+    GitHub Pages workflow redeploys with the uploaded video/photos included."""
+    if not check_auth():
+        return {'error': 'unauthorized'}, 401
+    root = os.path.dirname(__file__)
+    repo = (os.getenv('GITHUB_REPO') or '').strip().strip('/')
+    pat = (os.getenv('GITHUB_PAT') or '').strip()
+    if not repo or not pat:
+        return {'error': 'set GITHUB_REPO and GITHUB_PAT (and optionally GITHUB_BRANCH) env vars to enable publishing'}, 400
+    branch = (os.getenv('GITHUB_BRANCH') or 'main').strip()
+    url = f"https://x-access-token:{pat}@github.com/{repo}.git"
+
+    try:
+        subprocess.run([sys.executable, 'build_static.py'], cwd=root, check=True,
+                       capture_output=True, text=True, timeout=120)
+    except subprocess.CalledProcessError as e:
+        return {'error': 'static build failed: ' + (e.stderr or e.stdout or str(e))[:300]}, 500
+
+    def git(*args, timeout=90):
+        return subprocess.run(['git', '-C', root, *args], capture_output=True,
+                              text=True, timeout=timeout)
+
+    try:
+        r = git('add', '--', 'static/uploads', 'data/site.json')
+        if r.returncode != 0:
+            return {'error': 'git add failed: ' + r.stderr[:300]}, 500
+
+        changed = git('diff', '--cached', '--quiet')
+        if changed.returncode == 0:
+            return {'ok': True, 'pushed': False, 'msg': 'No media changes to publish.'}
+
+        ts = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        commit = git('-c', 'user.name=Free Traffic Bot', '-c', 'user.email=bot@local',
+                      'commit', '-m', f'Publish media from dashboard ({ts})')
+        if commit.returncode != 0:
+            return {'error': 'git commit failed: ' + commit.stderr[:300]}, 500
+
+        # Ensure full history before pushing (Render checkouts can be shallow).
+        shallow = git('rev-parse', '--is-shallow-repository')
+        if shallow.stdout.strip() == 'true':
+            git('fetch', '--unshallow', url, branch)
+
+        push = git('push', url, f'HEAD:{branch}')
+        if push.returncode != 0:
+            return {'error': 'git push failed: ' + push.stderr[:300]}, 500
+        return {'ok': True, 'pushed': True,
+                'msg': f'Published to GitHub. GitHub Pages redeploys in ~1 min.'}
+    except Exception as e:
+        return {'error': str(e)}, 500
 
 
 @app.route('/api/searchconsole')

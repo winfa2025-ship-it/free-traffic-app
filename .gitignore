@@ -7,3 +7,5 @@ __pycache__/
 data/app.db
 *.log
 data/stats.db
+public/
+

@@ -24,3 +24,9 @@ services:
       sync: false
     - key: OPENAI_MODEL
       sync: false
+    - key: GITHUB_REPO
+      value: "winfa2025-ship-it/free-traffic-app"
+    - key: GITHUB_BRANCH
+      value: "main"
+    - key: GITHUB_PAT
+      sync: false

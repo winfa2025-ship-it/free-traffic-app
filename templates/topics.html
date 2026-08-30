@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Topics — Free Traffic Control Center</title>
+<meta name="robots" content="index,follow"/>
+<meta name="description" content="Browse all topic guides."/>
+<style>
+:root{--bg:#0e0b07;--gold:#d9b25f;--cream:#f6efe2;--card:#1a140c}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--cream);line-height:1.6}
+a{color:var(--gold)}.wrap{max-width:880px;margin:0 auto;padding:20px}
+h1{color:var(--gold)}.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid #2a2114;border-radius:12px;padding:16px}
+.card a{font-weight:700;text-decoration:none;font-size:1.05rem}
+.tag{display:inline-block;font-size:.75rem;color:#b9a98a;border:1px solid #2a2114;border-radius:999px;padding:2px 8px;margin:4px 4px 0 0}
+footer{padding:24px 0;color:#b9a98a;font-size:.85rem;text-align:center}
+</style></head>
+<body><div class="wrap">
+<h1>&#128218; All Topic Guides</h1>
+<p class="muted" style="color:#b9a98a">Free, SEO-optimized guides. Internal hub to help search engines crawl every page.</p>
+<div class="grid">
+{% for it in items %}<div class="card"><a href="{{ rel }}{{ it.url }}">{{ it.title }}</a>
+<div style="margin-top:8px">{% for l in it.langs %}<span class="tag">{{ l }}</span>{% endfor %}</div></div>{% endfor %}
+</div>
+<footer>&copy; 2026 Kungfu Express &middot; <a href="{{ rel }}">Home</a></footer>
+</div></body></html>

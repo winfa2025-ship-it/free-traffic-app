@@ -83,7 +83,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
 <body>
 <header class="wrap">
   <div class="brand">KUNGFU EXPRESS · Pure Aroma</div>
-  {% if is_content|default(false) %}<a class="btn" href="/" style="background:transparent;color:var(--gold);border:1px solid var(--gold)">← Home</a>{% endif %}
+  {% if is_content|default(false) %}<a class="btn" href="{{ rel or './' }}" style="background:transparent;color:var(--gold);border:1px solid var(--gold)">← Home</a>{% endif %}
   <a class="btn" href="{{ p.cta_url }}" target="_blank" rel="noopener">{{ p.cta_label }}</a>
 </header>
 <div class="wrap">
@@ -102,7 +102,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
     <div class="langs">
        {% set names = {'en':'EN','zh':'中文','ja':'日本語','ko':'한국어','es':'ES','ar':'العربية','ru':'RU','de':'DE','fr':'FR','pt':'PT','it':'IT','hi':'HI','vi':'VI','id':'ID','th':'TH','tr':'TR'} %}
        {% set sw = switcher|default(site.pages.keys()|list) %}
-       {% for l in sw %}{% if l != lang %}<a href="{{ base|default('/') }}/{{ l }}">{{ names.get(l, l|upper) }}</a> {% endif %}{% endfor %}
+       {% for l in sw %}{% if l != lang %}<a href="{{ lang_prefix }}{{ l }}/">{{ names.get(l, l|upper) }}</a> {% endif %}{% endfor %}
      </div>
    </div>
    {% set _dom = site.domain.rstrip('/') %}
@@ -128,7 +128,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
      <h2>相關指南</h2>
      <ul>
      {% for s2, cp2 in site.get('content_pages', {}).items() %}
-       {% if s2 != slug %}<li><a href="/p/{{ s2 }}/{{ lang }}">{{ cp2['pages'].get(lang, {}).get('title', s2) }}</a></li>{% endif %}
+        {% if s2 != slug %}<li><a href="{{ pages_prefix }}{{ s2 }}/{{ lang }}/">{{ cp2['pages'].get(lang, {}).get('title', s2) }}</a></li>{% endif %}
      {% endfor %}
      </ul>
    </section>
@@ -148,7 +148,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
   </div>
 </div>
 <footer class="wrap">© 2026 Kungfu Express. Global limited pre-order.
-  <div style="margin-top:8px"><a href="/topics">Browse all topics</a>{% if is_content|default(false) %} · <a href="/">Home</a>{% endif %}</div>
+  <div style="margin-top:8px"><a href="{{ rel }}topics/">Browse all topics</a>{% if is_content|default(false) %} · <a href="{{ rel or './' }}">Home</a>{% endif %}</div>
 </footer>
   <script>
     document.querySelectorAll('a[href*="kickstarter"]').forEach(function(a){

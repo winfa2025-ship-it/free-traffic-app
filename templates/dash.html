@@ -17,6 +17,11 @@
   .row{display:flex;gap:10px;flex-wrap:wrap}
   .row>div{flex:1;min-width:240px}
   a{color:#2563eb}
+  .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin:12px 0}
+  .media-grid .thumb{position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .media-grid .thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .media-grid .thumb .rm{position:absolute;top:4px;right:4px;background:#dc2626;color:#fff;border:none;border-radius:6px;padding:2px 7px;font-size:12px;cursor:pointer;opacity:.9}
+  #mv_preview video{max-width:100%;border-radius:8px;margin-top:8px}
 </style>
 </head>
 <body>
@@ -47,6 +52,30 @@
   <label>Sections (one per line: Heading || body)</label><textarea id="sections"></textarea>
   <button onclick="saveSite()">💾 Save</button>
   <p id="save-msg"></p>
+</div>
+
+<div class="card">
+  <h3>🎬 Media — hero video &amp; product photos</h3>
+  <p class="muted">Show a video and product photos at the top of the homepage. Upload files or paste a link. Media is reused across all languages.</p>
+
+  <label>Hero video</label>
+  <div class="row">
+    <div><input id="mv_file" type="file" accept="video/mp4,video/webm,video/quicktime,.mp4,.webm,.mov" /></div>
+    <div><input id="mv_link" placeholder="Or paste a video URL (mp4 / .webm / YouTube)" /></div>
+  </div>
+  <button onclick="uploadVideo()">📤 Upload / set video</button>
+  <div id="mv_status"></div>
+  <div id="mv_preview"></div>
+
+  <label style="margin-top:16px">Product photos (add one or more)</label>
+  <div class="row">
+    <div><input id="mp_files" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" multiple /></div>
+  </div>
+  <button onclick="uploadPhotos()">📤 Upload photos</button>
+  <div id="mp_status"></div>
+  <div id="mp_grid" class="media-grid"></div>
+  <button onclick="saveMedia()" style="background:#16a34a">💾 Save media</button>
+  <p id="media-msg"></p>
 </div>
 
 <div class="card">
@@ -153,6 +182,65 @@ async function saveSite(){
   const rr=await fetch('/api/site',{method:'POST',headers:Object.assign({'Content-Type':'application/json'},$('key').value?{'x-admin-key':$('key').value}:{}),body:JSON.stringify(s)});
   const d=await rr.json(); $('save-msg').className=d.ok?'ok':'err'; $('save-msg').textContent=d.ok?'Saved. Refresh / to see changes.':(d.error||'failed');
 }
+let media={hero_video:'',product_photos:[]};
+async function loadMedia(){
+  const r=await fetch('/api/site',hd()); if(!r.ok)return;
+  const s=await r.json();
+  media.hero_video=s.hero_video||'';
+  media.product_photos=(Array.isArray(s.product_photos)?s.product_photos:[]).filter(Boolean);
+  renderMedia();
+}
+function mediaHeaders(){return Object.assign($('key').value?{'x-admin-key':$('key').value}:{});}
+async function saveMedia(){
+  const r=await fetch('/api/site',hd()); if(!r.ok)return;
+  const s=await r.json();
+  s.hero_video=media.hero_video;
+  s.product_photos=media.product_photos;
+  const rr=await fetch('/api/site',{method:'POST',headers:Object.assign({'Content-Type':'application/json'},mediaHeaders()),body:JSON.stringify(s)});
+  const d=await rr.json();
+  $('media-msg').className=d.ok?'ok':'err';
+  $('media-msg').textContent=d.ok?'Saved. Hero video & photos are live on the homepage.':(d.error||'failed');
+}
+function renderMedia(){
+  $('mv_preview').innerHTML=media.hero_video?'<video src="'+media.hero_video+'" controls muted loop style="max-width:100%;max-height:220px;border-radius:8px"></video>':'';
+  $('mp_grid').innerHTML=media.product_photos.map((u,i)=>
+    '<div class="thumb"><img src="'+u+'" alt="product" /><button class="rm" onclick="rmPhoto('+i+')">×</button></div>').join('')||'<p class="muted">No photos yet.</p>';
+}
+async function doUpload(file,kind){
+  const fd=new FormData(); fd.append('file',file); fd.append('kind',kind);
+  const r=await fetch('/api/upload',{method:'POST',headers:mediaHeaders(),body:fd});
+  const d=await r.json();
+  if(!d.ok){ throw new Error(d.error||'upload failed'); }
+  return d.url;
+}
+async function uploadVideo(){
+  const f=$('mv_file').files[0];
+  try{
+    if(f){ const url=await doUpload(f,'video'); media.hero_video=url; }
+    else { const link=$('mv_link').value.trim(); if(link){ media.hero_video=link; } else { alert('Choose a video file or paste a URL'); return; } }
+    await saveMedia(); renderMedia();
+    $('mv_status').className='ok'; $('mv_status').textContent='Video set.';
+  }catch(e){ $('mv_status').className='err'; $('mv_status').textContent=e.message; }
+}
+async function uploadPhotos(){
+  const files=Array.from($('mp_files').files);
+  if(!files.length){ alert('Choose one or more photos'); return; }
+  $('mp_status').className='ok'; $('mp_status').textContent='Uploading…';
+  try{
+    for(const f of files){ const url=await doUpload(f,'image'); media.product_photos.push(url); }
+    await saveMedia(); renderMedia();
+    $('mp_status').textContent='Uploaded '+files.length+' photo(s).';
+    $('mp_files').value='';
+  }catch(e){ $('mp_status').className='err'; $('mp_status').textContent=e.message; }
+}
+async function rmPhoto(i){
+  const url=media.product_photos[i];
+  media.product_photos.splice(i,1);
+  if(url && url.indexOf('static/uploads/')===0){
+    try{ await fetch('/api/media/delete',{method:'POST',headers:Object.assign({'Content-Type':'application/json'},mediaHeaders()),body:JSON.stringify({url})}); }catch(e){}
+  }
+  await saveMedia(); renderMedia();
+}
 async function seoCheck(){
   const r=await fetch('/api/seo-check?lang='+$('lang').value,hd()); const d=await r.json();
   $('seo').innerHTML=`Score: <b>${d.score}</b><br>`+(d.tips.length?d.tips.map(t=>'• '+t).join('<br>'):'✅ Looks good');
@@ -221,7 +309,7 @@ async function submitSe(){
   const r=await fetch('/api/submit',{method:'POST',headers:$('key').value?{'x-admin-key':$('key').value}:{}}); const d=await r.json();
   $('subse').textContent=JSON.stringify(d.results)+' — '+d.note;
 }
-window.addEventListener('load', () => { buildLangs(); loadSite(); seoCheck(); loadPages(); loadSearch(); });
+window.addEventListener('load', () => { buildLangs(); loadSite(); loadMedia(); seoCheck(); loadPages(); loadSearch(); });
 </script>
 </body>
 </html>

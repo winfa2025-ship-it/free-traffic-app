@@ -1,0 +1,62 @@
+name: Deploy public site to GitHub Pages
+
+# Builds the complete public (visitor-facing) static site from data/site.json and
+# deploys it to GitHub Pages. GitHub Pages never sleeps, so visitors never hit a
+# cold start. The admin backend (/login, /dashboard) keeps running on Render.
+#
+# One-time setup (required, in the repo on GitHub):
+#   1. Settings > Pages > Source: "GitHub Actions"
+#   2. Settings > Pages: the site will be at https://<user>.github.io/<repo>/
+#
+# To point the public site at a different host, change SITE_DOMAIN below (e.g. a
+# custom domain) and deploy those files (public/) to that host instead.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Jinja2
+        run: pip install jinja2
+
+      - name: Build static public site
+        env:
+          SITE_DOMAIN: https://winfa2025-ship-it.github.io/free-traffic-app
+        run: python build_static.py
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
