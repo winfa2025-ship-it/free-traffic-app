@@ -64,6 +64,23 @@
 </div>
 
 <div class="card">
+  <h3>📄 Content Pages — the SEO 推流 engine</h3>
+  <p class="muted">Paste one <b>keyword / topic per line</b>. The system auto-writes an SEO-optimized landing page per language, links them together, and adds them to the sitemap — so search engines have many pages to index.</p>
+  <label>Keywords / topics (one per line)</label>
+  <textarea id="gen_kw" placeholder="matcha milk tea&#10;best bubble tea 2026&#10;premium milk tea gift"></textarea>
+  <label>Languages</label>
+  <div id="gen_langs" class="row" style="gap:6px"></div>
+  <div class="row" style="margin-top:8px">
+    <div><label>CTA URL (optional)</label><input id="gen_cta_url" placeholder="leave blank = use main page CTA" /></div>
+    <div><label>CTA label (optional)</label><input id="gen_cta_label" placeholder="leave blank = use main page CTA" /></div>
+  </div>
+  <button onclick="generatePages()">⚡ Generate pages</button>
+  <p id="gen_msg"></p>
+  <h4 style="margin:18px 0 6px">Existing content pages</h4>
+  <ul id="pages_list" style="font-size:14px;line-height:1.9"></ul>
+</div>
+
+<div class="card">
   <h3>Search Console (real organic traffic)</h3>
   <p class="muted">Add credentials.json (Search Console API OAuth) to read top queries. See README.</p>
   <button onclick="sc()">Load top queries (28d)</button>
@@ -91,6 +108,12 @@
 </div>
 
 <div class="card">
+  <h3>🔍 Search traffic (where visitors come from)</h3>
+  <p><button onclick="loadSearch()">🔄 Refresh search traffic</button></p>
+  <div id="search"></div>
+</div>
+
+<div class="card">
   <h3>🌍 Submit to all global search engines</h3>
   <p class="muted">Paste your <code>/sitemap.xml</code> URL into each webmaster tool below. Yahoo / DuckDuckGo / Ecosia / Qwant use Bing's index, so Bing covers them.</p>
   <ul>
@@ -113,6 +136,8 @@ async function loadSite(){
   $('verify').value=s.verify||'';
   ['title','hero_title','description','keywords','hero_lead','cta_label','cta_url'].forEach(k=>$(k).value=p[k]||'');
   $('sections').value=(p.sections||[]).map(x=>x.h2+' || '+x.body).join('\n');
+  $('gen_cta_url').value = p.cta_url||'';
+  $('gen_cta_label').value = p.cta_label||'';
   $('editor').style.display='block';
 }
 async function saveSite(){
@@ -151,11 +176,52 @@ async function loadStats(){
 }
 loadStats();
 
+const ALL_LANGS = ['en','zh','ja','ko','es','ar','ru','de','fr','pt','it','hi','vi','id','th','tr'];
+function buildLangs(){
+  $('gen_langs').innerHTML = ALL_LANGS.map(l=>`<label style="font-weight:400;font-size:13px"><input class="genlang" type="checkbox" value="${l}" ${['en','zh'].includes(l)?'checked':''}/> ${l}</label>`).join('');
+}
+async function generatePages(){
+  const kws = $('gen_kw').value.trim();
+  if(!kws){ alert('Enter at least one keyword / topic'); return; }
+  const langs = [...document.querySelectorAll('.genlang:checked')].map(c=>c.value);
+  if(!langs.length){ alert('Select at least one language'); return; }
+  const body = { keywords:kws, langs, cta_url:$('gen_cta_url').value.trim(), cta_label:$('gen_cta_label').value.trim() };
+  const r = await fetch('/api/generate',{method:'POST',headers:Object.assign({'Content-Type':'application/json'},hd()),body:JSON.stringify(body)});
+  const d = await r.json();
+  if(d.ok){ $('gen_msg').className='ok'; $('gen_msg').textContent='✅ Created '+d.created.length+' page(s). See list below.'; loadPages(); }
+  else { $('gen_msg').className='err'; $('gen_msg').textContent=d.error||'failed'; }
+}
+async function loadPages(){
+  const r = await fetch('/api/pages',hd()); if(!r.ok) return;
+  const d = await r.json();
+  $('pages_list').innerHTML = d.pages.length
+    ? d.pages.map(p=>`<li><a href="${p.url}" target="_blank" rel="noopener">${p.title.replace(/</g,'&lt;')}</a> <small class="muted">(${p.langs.join(', ')})</small> <button onclick="delPage('${p.slug}')">🗑</button></li>`).join('')
+    : '<li class="muted">No content pages yet — generate some above.</li>';
+}
+async function delPage(slug){
+  if(!confirm('Delete /p/'+slug+'?')) return;
+  const r = await fetch('/api/pages?slug='+encodeURIComponent(slug),{method:'DELETE',headers:hd()});
+  const d = await r.json(); if(d.ok) loadPages();
+}
+async function loadSearch(){
+  fetch('/api/stats-view').then(r=>r.json()).then(d=>{
+    const src = Object.keys(d.by_source||{}).map(s=>s+': '+(d.by_source[s])).join(' · ') || '—';
+    const paths = (d.top_paths||[]).map(x=>x.path+': '+x.n).join('<br>') || '—';
+    const qs = (d.top_queries||[]).map(x=>x.query+' ('+x.n+')').join('<br>') || '—';
+    $('search').innerHTML =
+      '<p>From search engines: <b>'+(d.search_total||0)+'</b> of total '+(d.total||0)+' views</p>'+
+      '<p class="muted">Sources: '+src+'</p>'+
+      '<p style="margin-top:8px"><b>Top landing pages</b></p><div style="font-size:12px;word-break:break-all">'+paths+'</div>'+
+      '<p style="margin-top:10px"><b>Search queries captured from referrers</b></p><div style="font-size:12px">'+qs+'</div>'+
+      '<p class="muted" style="margin-top:8px">Google encrypts the query in its referrer — connect Search Console (above) for the full query list.</p>';
+  }).catch(()=>{ $('search').innerHTML='<p class="muted">failed</p>'; });
+}
+
 async function submitSe(){
   const r=await fetch('/api/submit',{method:'POST',headers:$('key').value?{'x-admin-key':$('key').value}:{}}); const d=await r.json();
   $('subse').textContent=JSON.stringify(d.results)+' — '+d.note;
 }
-window.addEventListener('load', () => { loadSite(); seoCheck(); });
+window.addEventListener('load', () => { buildLangs(); loadSite(); seoCheck(); loadPages(); loadSearch(); });
 </script>
 </body>
 </html>

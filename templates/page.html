@@ -7,7 +7,11 @@
 <meta name="description" content="{{ p.description }}" />
 <meta name="keywords" content="{{ p.keywords }}" />
 <meta name="robots" content="index,follow" />
-<link rel="canonical" href="{{ site.domain }}/{{ lang }}" />
+  {% set _dom = site.domain.rstrip('/') %}
+  {% set _base = base|default('') %}
+  {% if _base == '/' %}{% set _base = '' %}{% endif %}
+  {% set _locmap = {'en':'en_US','zh':'zh_TW','ja':'ja_JP','ko':'ko_KR','es':'es_ES','ar':'ar_AR','ru':'ru_RU','de':'de_DE','fr':'fr_FR','pt':'pt_BR','it':'it_IT','hi':'hi_IN','vi':'vi_VN','id':'id_ID','th':'th_TH','tr':'tr_TR'} %}
+  <link rel="canonical" href="{{ _dom }}{{ _base }}/{{ lang }}" />
   {{ alts|safe }}
   {{ site.get('verify','')|safe }}
   <script type="application/ld+json">
@@ -26,8 +30,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ p.title }}" />
 <meta property="og:description" content="{{ p.description }}" />
-<meta property="og:url" content="{{ site.domain }}/{{ lang }}" />
+<meta property="og:url" content="{{ _dom }}{{ _base }}/{{ lang }}" />
+<meta property="og:image" content="{{ _dom }}/static/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="{{ _locmap.get(lang, 'en_US') }}" />
+{% for l in (switcher|default(site.pages.keys()|list)) %}{% if l != lang %}<meta property="og:locale:alternate" content="{{ _locmap.get(l, 'en_US') }}" />{% endif %}{% endfor %}
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{ _dom }}/static/og.png" />
 <script type="application/ld+json">
 { "@context":"https://schema.org", "@type":"Product", "name":"Pure Aroma Milk Tea",
   "description":"{{ p.description }}",
@@ -67,6 +77,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
 <body>
 <header class="wrap">
   <div class="brand">KUNGFU EXPRESS · Pure Aroma</div>
+  {% if is_content|default(false) %}<a class="btn" href="/" style="background:transparent;color:var(--gold);border:1px solid var(--gold)">← Home</a>{% endif %}
   <a class="btn" href="{{ p.cta_url }}" target="_blank" rel="noopener">{{ p.cta_label }}</a>
 </header>
 <div class="wrap">
@@ -75,14 +86,25 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
     <p class="lead">{{ p.hero_lead }}</p>
     <a class="btn" href="{{ p.cta_url }}" target="_blank" rel="noopener">{{ p.cta_label }}</a>
     <div class="langs">
-      {% set names = {'en':'EN','zh':'中文','ja':'日本語','ko':'한국어','es':'ES','ar':'العربية','ru':'RU','de':'DE','fr':'FR','pt':'PT','it':'IT','hi':'HI','vi':'VI','id':'ID','th':'TH','tr':'TR'} %}
-      {% for l in site.pages %}{% if l != lang %}<a href="/{{ l }}">{{ names.get(l, l|upper) }}</a> {% endif %}{% endfor %}
+       {% set names = {'en':'EN','zh':'中文','ja':'日本語','ko':'한국어','es':'ES','ar':'العربية','ru':'RU','de':'DE','fr':'FR','pt':'PT','it':'IT','hi':'HI','vi':'VI','id':'ID','th':'TH','tr':'TR'} %}
+       {% set sw = switcher|default(site.pages.keys()|list) %}
+       {% for l in sw %}{% if l != lang %}<a href="{{ base|default('/') }}/{{ l }}">{{ names.get(l, l|upper) }}</a> {% endif %}{% endfor %}
     </div>
   </div>
-  {% for s in p.sections %}
+   {% for s in p.sections %}
    <section><h2>{{ s.h2|noemoji }}</h2><p>{{ s.body }}</p></section>
-  {% endfor %}
-  <div class="share">
+   {% endfor %}
+   {% if is_content|default(false) %}
+   <section>
+     <h2>相關指南</h2>
+     <ul>
+     {% for s2, cp2 in site.get('content_pages', {}).items() %}
+       {% if s2 != slug %}<li><a href="/p/{{ s2 }}/{{ lang }}">{{ cp2['pages'].get(lang, {}).get('title', s2) }}</a></li>{% endif %}
+     {% endfor %}
+     </ul>
+   </section>
+   {% endif %}
+   <div class="share">
     <h3>分享這頁，叫多啲人支持</h3>
     <div class="share-row">
       <button data-p="x">X</button>
@@ -96,7 +118,9 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
     </div>
   </div>
 </div>
-<footer class="wrap">© 2026 Kungfu Express. Global limited pre-order.</footer>
+<footer class="wrap">© 2026 Kungfu Express. Global limited pre-order.
+  <div style="margin-top:8px"><a href="/topics">Browse all topics</a>{% if is_content|default(false) %} · <a href="/">Home</a>{% endif %}</div>
+</footer>
   <script>
     document.querySelectorAll('a[href*="kickstarter"]').forEach(function(a){
       a.addEventListener('click', function(){

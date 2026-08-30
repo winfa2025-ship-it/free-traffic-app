@@ -5,14 +5,22 @@ services:
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
-    envVars:
-      - key: PORT
-        value: "10000"
-      - key: ADMIN_EMAIL
-        sync: false
-      - key: ADMIN_PASSWORD
-        sync: false
-      - key: TOKEN_SECRET
-        sync: false
-      - key: ADMIN_KEY
-        sync: false
+  envVars:
+    - key: PORT
+      value: "10000"
+    - key: ADMIN_EMAIL
+      sync: false
+    - key: ADMIN_PASSWORD
+      sync: false
+    - key: TOKEN_SECRET
+      sync: false
+    - key: ADMIN_KEY
+      sync: false
+    - key: REGISTER_CODE
+      sync: false
+    - key: SECURE_COOKIE
+      value: "true"
+    - key: OPENAI_API_KEY
+      sync: false
+    - key: OPENAI_MODEL
+      sync: false

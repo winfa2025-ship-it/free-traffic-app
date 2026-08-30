@@ -1,6 +1,7 @@
 .env
 data/admin.json
 credentials.json
+data/.secret
 __pycache__/
 *.pyc
 data/app.db

@@ -29,11 +29,28 @@ python app.py        # / = landing, /zh = Chinese, /dashboard = control center
 ## Endpoints
 
 - `/` and `/<lang>` — localized landing pages (hreflang alternates)
-- `/sitemap.xml`, `/robots.txt` — auto-generated for indexing
-- `/dashboard` — edit SEO/content, SEO check, Search Console queries
+- `/p/<slug>` and `/p/<slug>/<lang>` — auto-generated SEO **content pages** (one per keyword)
+- `/topics` — internal hub linking every content page (helps crawl & internal linking)
+- `/sitemap.xml`, `/robots.txt` — auto-generated, now including all content pages
+- `/dashboard` — edit SEO/content, **generate content pages from keywords**, SEO check, Search Console queries, **search-traffic analytics**
 - `/api/site` GET/POST — site config (data/site.json)
+- `/api/pages` GET/POST/DELETE — list / create / delete content pages
+- `/api/generate` POST — bulk-create SEO pages from a list of keywords
 - `/api/seo-check?lang=en` — on-page SEO score + tips
 - `/api/searchconsole` — top queries (28d) from Search Console
+- `/api/stats-view` — traffic + **search-engine source breakdown, top landing pages, captured queries**
+
+## Auto-generating SEO pages (the 推流 engine)
+
+1. Open `/dashboard` → **Content Pages** card.
+2. Paste one keyword/topic per line, pick languages (en/zh default), optional CTA.
+3. Click **Generate** — the app writes an SEO-optimized landing page per language, links
+   them together and into `/topics`, and adds them to `/sitemap.xml`. More indexed pages =
+   more ways for search engines to send free traffic.
+4. Connect Google Search Console (below) to see which queries bring impressions/clicks.
+
+Generation uses an LLM when `OPENAI_API_KEY` is set (set `OPENAI_MODEL`, default
+`gpt-4o-mini`); otherwise it falls back to a built-in SEO template so it always works offline.
 
 ## Optional: Google Search Console read-only
 
