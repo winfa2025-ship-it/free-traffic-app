@@ -102,7 +102,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
     <div class="langs">
        {% set names = {'en':'EN','zh':'中文','ja':'日本語','ko':'한국어','es':'ES','ar':'العربية','ru':'RU','de':'DE','fr':'FR','pt':'PT','it':'IT','hi':'HI','vi':'VI','id':'ID','th':'TH','tr':'TR'} %}
        {% set sw = switcher|default(site.pages.keys()|list) %}
-       {% for l in sw %}{% if l != lang %}<a href="{{ base|default('/') }}/{{ l }}">{{ names.get(l, l|upper) }}</a> {% endif %}{% endfor %}
+       {% for l in sw %}{% if l != lang %}<a href="{{ _base }}/{{ l }}">{{ names.get(l, l|upper) }}</a> {% endif %}{% endfor %}
      </div>
    </div>
    {% set _dom = site.domain.rstrip('/') %}
