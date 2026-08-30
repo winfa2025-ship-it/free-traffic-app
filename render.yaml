@@ -17,7 +17,7 @@ services:
     - key: ADMIN_KEY
       sync: false
     - key: REGISTER_CODE
-      sync: false
+      value: "VIP888"
     - key: SECURE_COOKIE
       value: "true"
     - key: OPENAI_API_KEY
