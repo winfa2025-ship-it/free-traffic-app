@@ -133,19 +133,22 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
      </ul>
    </section>
    {% endif %}
-   <div class="share">
-    <h3>分享這頁，叫多啲人支持</h3>
-    <div class="share-row">
-      <button data-p="x">X</button>
-      <button data-p="facebook">Facebook</button>
-      <button data-p="reddit">Reddit</button>
-      <button data-p="line">LINE</button>
-      <button data-p="whatsapp">WhatsApp</button>
-      <button data-p="telegram">Telegram</button>
-      <button data-p="weibo">微博</button>
-      <button data-p="copy">複製連結</button>
-    </div>
-  </div>
+    {% set _share_h = {'en':'Share this page','zh':'分享這頁','ja':'このページをシェア','ko':'이 페이지 공유하기','es':'Comparte esta página','ar':'شارك هذه الصفحة','ru':'Поделитесь этой страницей','de':'Teile diese Seite','fr':'Partagez cette page','pt':'Compartilhe esta página','it':'Condividi questa pagina','hi':'इस पेज को साझा करें','vi':'Chia sẻ trang này','id':'Bagikan halaman ini','th':'แชร์หน้านี้','tr':'Bu sayfayı paylaş'} %}
+    {% set _share_copy = {'en':'Copy link','zh':'複製連結','ja':'リンクをコピー','ko':'링크 복사','es':'Copiar enlace','ar':'نسخ الرابط','ru':'Скопировать ссылку','de':'Link kopieren','fr':'Copier le lien','pt':'Copiar link','it':'Copia link','hi':'लिंक कॉपी करें','vi':'Sao chép liên kết','id':'Salin tautan','th':'คัดลอกลิงก์','tr':'Bağlantıyı kopyala'} %}
+    {% set _share_copied = {'en':'Link copied','zh':'連結已複製','ja':'リンクをコピーしました','ko':'링크가 복사되었습니다','es':'Enlace copiado','ar':'تم نسخ الرابط','ru':'Ссылка скопирована','de':'Link kopiert','fr':'Lien copié','pt':'Link copiado','it':'Link copiato','hi':'लिंक कॉपी हो गया','vi':'Đã sao chép liên kết','id':'Tautan disalin','th':'คัดลอกลิงก์แล้ว','tr':'Bağlantı kopyalandı'} %}
+    <div class="share">
+     <h3>{{ _share_h.get(lang, _share_h['en']) }}</h3>
+     <div class="share-row">
+       <button data-p="x">X</button>
+       <button data-p="facebook">Facebook</button>
+       <button data-p="reddit">Reddit</button>
+       <button data-p="line">LINE</button>
+       <button data-p="whatsapp">WhatsApp</button>
+       <button data-p="telegram">Telegram</button>
+       <button data-p="weibo">{% if lang == 'zh' %}微博{% else %}Weibo{% endif %}</button>
+       <button data-p="copy">{{ _share_copy.get(lang, _share_copy['en']) }}</button>
+     </div>
+   </div>
 </div>
 <footer class="wrap">© 2026 Kungfu Express. Global limited pre-order.
   <div style="margin-top:8px"><a href="{{ rel }}topics/">Browse all topics</a>{% if is_content|default(false) %} · <a href="{{ rel or './' }}">Home</a>{% endif %}</div>
@@ -168,7 +171,7 @@ footer{padding:26px 0;color:#b9a98a;font-size:.85rem;text-align:center;border-to
           telegram:'https://t.me/share/url?url='+u+'&text='+t,
           weibo:'http://service.weibo.com/share/share.php?url='+u+'&title='+t
         };
-        if(p==='copy'){ try{navigator.clipboard.writeText(location.href);alert('連結已複製');}catch(e){} return; }
+        if(p==='copy'){ try{navigator.clipboard.writeText(location.href);{% if lang %}{% set _c = _share_copied.get(lang, _share_copied['en']) %}alert({{ _c|tojson }});{% endif %}}catch(e){} return; }
         window.open(maps[p],'_blank','noopener');
       });
     });
